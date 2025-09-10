@@ -1,0 +1,104 @@
+{
+  "company_name": "GrowthTech株式会社",
+  "fiscal_year": "2022",
+  "period_start": "2022-04-01",
+  "period_end": "2023-03-31",
+  "currency": "JPY",
+  "unit": 1,
+  "financial_statements": {
+    "balance_sheet": {
+      "title": "貸借対照表",
+      "date": "2023-03-31",
+      "assets": {
+        "title": "資産の部",
+        "current_assets": {
+          "title": "流動資産",
+          "cash_and_deposits": 8000000000,
+          "accounts_receivable_trade": 2000000000,
+          "other_current_assets": 500000000,
+          "total_current_assets": 10500000000
+        },
+        "fixed_assets": {
+          "title": "固定資産",
+          "tangible_fixed_assets": 1500000000,
+          "intangible_fixed_assets": 800000000,
+          "investments_and_other_assets": 200000000,
+          "total_fixed_assets": 2500000000
+        },
+        "total_assets": 13000000000
+      },
+      "liabilities": {
+        "title": "負債の部",
+        "current_liabilities": {
+          "title": "流動負債",
+          "accounts_payable_trade": 1000000000,
+          "short_term_borrowings": 500000000,
+          "accrued_income_taxes": 564000000,
+          "other_current_liabilities": 436000000,
+          "total_current_liabilities": 2500000000
+        },
+        "fixed_liabilities": {
+          "title": "固定負債",
+          "long_term_borrowings": 1000000000,
+          "total_fixed_liabilities": 1000000000
+        },
+        "total_liabilities": 3500000000
+      },
+      "net_assets": {
+        "title": "純資産の部",
+        "shareholders_equity": {
+          "title": "株主資本",
+          "capital_stock": 1000000000,
+          "capital_surplus": 3000000000,
+          "retained_earnings": 5500000000,
+          "total_shareholders_equity": 9500000000
+        },
+        "total_net_assets": 9500000000
+      },
+      "total_liabilities_and_net_assets": 13000000000
+    },
+    "income_statement": {
+      "title": "損益計算書",
+      "period": "2022年4月1日～2023年3月31日",
+      "net_sales": 11800000000,
+      "cost_of_sales": 2360000000,
+      "gross_profit": 9440000000,
+      "selling_general_and_administrative_expenses": {
+        "title": "販売費及び一般管理費",
+        "research_and_development": 3000000000,
+        "personnel_expenses": 2500000000,
+        "advertising_expenses": 1500000000,
+        "other_sga": 590000000,
+        "total_sga": 7590000000
+      },
+      "operating_income": 1850000000,
+      "non_operating_income": 50000000,
+      "non_operating_expenses": 20000000,
+      "ordinary_income": 1880000000,
+      "extraordinary_income": 0,
+      "extraordinary_loss": 0,
+      "income_before_income_taxes": 1880000000,
+      "income_taxes": 564000000,
+      "net_income": 1316000000
+    },
+    "cash_flow_statement": {
+      "title": "キャッシュ・フロー計算書",
+      "period": "2022年4月1日～2023年3月31日",
+      "operating_activities": {
+        "title": "営業活動によるキャッシュ・フロー",
+        "net_cash_provided_by_operating_activities": 2500000000
+      },
+      "investing_activities": {
+        "title": "投資活動によるキャッシュ・フロー",
+        "net_cash_used_in_investing_activities": -1000000000
+      },
+      "financing_activities": {
+        "title": "財務活動によるキャッシュ・フロー",
+        "net_cash_used_in_financing_activities": -200000000
+      },
+      "net_increase_in_cash": 1300000000,
+      "cash_at_beginning_of_period": 6700000000,
+      "cash_at_end_of_period": 8000000000
+    }
+  }
+}
