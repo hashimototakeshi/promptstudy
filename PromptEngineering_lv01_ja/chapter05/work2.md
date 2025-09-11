@@ -1,3 +1,15 @@
+---
+seq: 28
+title: ワーク2: 品質の改善（メタ認知）- AIに戦略を自己評価させる
+slug: chapter05/work2
+description: AIに戦略の自己評価を行わせ、より高品質なアウトプットを引き出すメタ認知テクニックを学ぶ
+type: work
+relation: chapter05/index,chapter05/work1
+difficulty: 3
+displayLanguage: ja
+duration: 25
+---
+
 # ワーク2: 品質の改善（メタ認知）- AIに戦略を自己評価させる
 
 ## サンプル課題

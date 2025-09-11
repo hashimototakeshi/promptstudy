@@ -1,3 +1,15 @@
+---
+seq: 13
+title: ワーク3: 段階的思考の誘導（Chain of Thought）
+slug: chapter03/work3_cot
+description: AIの思考プロセスを段階的に誘導するChain of Thoughtプロンプティングを学ぶ
+type: work
+relation: chapter03/index,chapter03/work1_persona,chapter03/work2_few_shot
+difficulty: 3
+displayLanguage: ja
+duration: 25
+---
+
 # ワーク3: 段階的思考の誘導（Chain of Thought）
 
 ## サンプル課題

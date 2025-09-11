@@ -1,3 +1,15 @@
+---
+seq: 22
+title: ワーク1: 技術調査・選定（ファクトチェック）
+slug: chapter04_for_Engineers/work1
+description: AIを活用した技術調査とファクトチェックの実践的な手法を学ぶ
+type: work
+relation: chapter04_for_Engineers/index
+difficulty: 2
+displayLanguage: ja
+duration: 25
+---
+
 # ワーク1: 技術調査・選定（ファクトチェック）
 
 ## サンプル課題

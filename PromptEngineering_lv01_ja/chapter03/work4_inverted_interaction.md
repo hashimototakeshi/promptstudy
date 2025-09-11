@@ -1,3 +1,15 @@
+---
+seq: 14
+title: ワーク4: 対話を通じた思考の精緻化（反転インタラクション）
+slug: chapter03/work4_inverted_interaction
+description: ユーザーが質問を受ける側に回ることで思考を深める反転インタラクションを学ぶ
+type: work
+relation: chapter03/index,chapter03/work3_cot
+difficulty: 3
+displayLanguage: ja
+duration: 25
+---
+
 # ワーク4: 対話を通じた思考の精緻化（反転インタラクション）
 
 ## サンプル課題

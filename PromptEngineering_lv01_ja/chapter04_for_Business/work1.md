@@ -1,3 +1,15 @@
+---
+seq: 17
+title: ワーク1: アイデア出しの相棒として - ブレストや企画のヒントをもらう方法
+slug: chapter04_for_Business/work1
+description: AIを活用した効果的なブレインストーミングと企画アイデアの出し方を学ぶ
+type: work
+relation: chapter04_for_Business/index
+difficulty: 2
+displayLanguage: ja
+duration: 20
+---
+
 # ワーク1: アイデア出しの相棒として - ブレストや企画のヒントをもらう方法
 
 ## サンプル課題

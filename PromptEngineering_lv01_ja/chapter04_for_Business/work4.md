@@ -1,3 +1,15 @@
+---
+seq: 20
+title: ワーク4: データ分析と可視化 - CSVデータから洞察を得る方法
+slug: chapter04_for_Business/work4
+description: AIを活用してCSVデータから有益なインサイトを抽出し、効果的な可視化を行う方法を学ぶ
+type: work
+relation: chapter04_for_Business/index,chapter04_for_Business/work3
+difficulty: 3
+displayLanguage: ja
+duration: 30
+---
+
 # ワーク4: データ分析と可視化 - CSVデータから洞察を得る方法
 
 ## サンプル課題

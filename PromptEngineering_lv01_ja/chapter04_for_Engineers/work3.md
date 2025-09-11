@@ -1,3 +1,15 @@
+---
+seq: 24
+title: ワーク3: ログ解析・デバッグ支援
+slug: chapter04_for_Engineers/work3
+description: AIを活用した効率的なログ解析とデバッグのテクニックを学ぶ
+type: work
+relation: chapter04_for_Engineers/index,chapter04_for_Engineers/work2
+difficulty: 3
+displayLanguage: ja
+duration: 30
+---
+
 # ワーク3: ログ解析・デバッグ支援
 
 ## サンプル課題

@@ -1,3 +1,15 @@
+---
+seq: 1
+title: ワーク1: まずは触ってみよう - ChatGPT、Gemini、Claudeを実際に使い比べ
+slug: chapter01/work01
+description: 生成AIの基本的な仕組みと特性を理解し、日常業務での活用イメージを持つ
+type: work
+relation: 
+difficulty: 1
+displayLanguage: ja
+duration: 10
+---
+
 # ワーク1: まずは触ってみよう - ChatGPT、Gemini、Claudeを実際に使い比べ
 
 **学習目標**: 生成AIの基本的な仕組みと特性を理解し、日常業務での活用イメージを持つ

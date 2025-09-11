@@ -1,3 +1,15 @@
+---
+seq: 27
+title: ワーク1: 思考の深化（ステップバック）- 問題の本質を見抜く
+slug: chapter05/work1
+description: 問題の本質を見極め、より深い分析と解決策を導くためのステップバックテクニックを学ぶ
+type: work
+relation: chapter05/index
+difficulty: 3
+displayLanguage: ja
+duration: 25
+---
+
 # ワーク1: 思考の深化（ステップバック）- 問題の本質を見抜く
 
 ## サンプル課題

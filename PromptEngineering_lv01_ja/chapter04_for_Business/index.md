@@ -1,3 +1,15 @@
+---
+seq: 16
+title: 第4章: ビジネス基本タスク実践
+slug: chapter04_for_Business/index
+description: ビジネスシーンで頻出する基本タスクをAIと効率的にこなすための実践的なスキルを学ぶ
+type: chapter-title
+relation: chapter03/実践課題
+difficulty: 1
+displayLanguage: ja
+duration: 5
+---
+
 # 第4章: ビジネス基本タスク実践
 
 ## この章で学ぶこと

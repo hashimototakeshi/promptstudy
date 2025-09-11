@@ -1,3 +1,15 @@
+---
+seq: 12
+title: ワーク2: 具体例からの学習（Few-Shot）
+slug: chapter03/work2_few_shot
+description: 具体例を示すことでAIの出力を制御するFew-Shotプロンプティングを学ぶ
+type: work
+relation: chapter03/index,chapter03/work1_persona
+difficulty: 2
+displayLanguage: ja
+duration: 20
+---
+
 # ワーク2: 具体例からの学習（Few-Shot）
 
 ## サンプル課題

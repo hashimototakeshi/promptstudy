@@ -1,3 +1,15 @@
+---
+seq: 11
+title: ワーク1: 多様な視点の獲得（ペルソナ）
+slug: chapter03/work1_persona
+description: 異なる立場や視点から物事を捉えるためのペルソナ設定テクニックを学ぶ
+type: work
+relation: chapter03/index
+difficulty: 2
+displayLanguage: ja
+duration: 20
+---
+
 # ワーク1: 多様な視点の獲得（ペルソナ）
 
 ## サンプル課題

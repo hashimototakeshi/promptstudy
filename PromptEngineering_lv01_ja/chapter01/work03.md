@@ -1,3 +1,15 @@
+---
+seq: 4
+title: ワーク3: AIはなぜ賢いのか？ - その「頭脳」の仕組みを理解する
+slug: chapter01/work03
+description: AIの仕組みを理解し、より効果的なプロンプトの作成方法を学ぶ
+type: work
+relation: chapter01/work01,chapter01/work02
+difficulty: 2
+displayLanguage: ja
+duration: 20
+---
+
 # ワーク3: AIはなぜ賢いのか？ - その「頭脳」の仕組みを理解する
 
 前のワークでは、AIが時に間違いを犯すこと（ハルシネーション）を学びました。では、なぜAIは間違えるのでしょうか？そして、どうすれば私たちはAIをよりうまくコントロールできるのでしょうか？

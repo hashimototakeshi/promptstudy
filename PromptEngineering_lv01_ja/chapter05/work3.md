@@ -1,3 +1,15 @@
+---
+seq: 29
+title: ワーク3: 信頼性の向上（自己検証）- AIに提案書をレビューさせる
+slug: chapter05/work3
+description: AIに自己検証を行わせ、提案書の論理的な整合性と説得力を高めるテクニックを学ぶ
+type: work
+relation: chapter05/index,chapter05/work2
+difficulty: 3
+displayLanguage: ja
+duration: 25
+---
+
 # ワーク3: 信頼性の向上（自己検証）- AIに提案書をレビューさせる
 
 ## サンプル課題

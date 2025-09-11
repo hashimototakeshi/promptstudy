@@ -1,3 +1,15 @@
+---
+seq: 3
+title: ワーク1-2: なぜ「質問力」が重要なのか？ - AIの得意・不得意とハルシネーション
+slug: chapter01/work02
+description: AIの得意・不得意を理解し、効果的な質問の仕方を学ぶ
+type: work
+relation: chapter01/work01
+difficulty: 1
+displayLanguage: ja
+duration: 15
+---
+
 # ワーク1-2: なぜ「質問力」が重要なのか？ - AIの得意・不得意とハルシネーション
 
 ## サンプル課題

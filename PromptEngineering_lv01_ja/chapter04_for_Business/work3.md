@@ -1,3 +1,15 @@
+---
+seq: 19
+title: ワーク3: 伝わる文章を書く - メール、ブログ、SNS投稿の作成術
+slug: chapter04_for_Business/work3
+description: 目的や読み手に応じた効果的な文章作成をAIと共に行うテクニックを学ぶ
+type: work
+relation: chapter04_for_Business/index,chapter04_for_Business/work2
+difficulty: 2
+displayLanguage: ja
+duration: 25
+---
+
 # ワーク3: 伝わる文章を書く - メール、ブログ、SNS投稿の作成術
 
 ## サンプル課題

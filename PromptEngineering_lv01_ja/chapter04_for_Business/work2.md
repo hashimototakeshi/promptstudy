@@ -1,3 +1,15 @@
+---
+seq: 18
+title: ワーク2: 情報整理のお手伝い - 長文要約、議事録作成、FAQ作成のコツ
+slug: chapter04_for_Business/work2
+description: AIを活用した効率的な情報整理とドキュメント作成のテクニックを学ぶ
+type: work
+relation: chapter04_for_Business/index,chapter04_for_Business/work1
+difficulty: 2
+displayLanguage: ja
+duration: 25
+---
+
 # ワーク2: 情報整理のお手伝い - 長文要約、議事録作成、FAQ作成のコツ
 
 ## サンプル課題

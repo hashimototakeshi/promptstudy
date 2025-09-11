@@ -1,3 +1,15 @@
+---
+seq: 2
+title: ワーク1 練習問題
+slug: chapter01/work01_練習問題
+description: 3つのモデルそれぞれに異なるプロンプトを試す練習問題
+type: exercise
+relation: chapter01/work01
+difficulty: 1
+displayLanguage: ja
+duration: 15
+---
+
 ## 練習問題
 
 3つのモデルそれぞれに、以下の2つのプロンプトを試してみてください：

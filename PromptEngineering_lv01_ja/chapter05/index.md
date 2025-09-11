@@ -1,3 +1,15 @@
+---
+seq: 26
+title: 第5章: AIとの対話を深化させる高度なプロンプト戦略
+slug: chapter05/index
+description: AIとのより高度な対話を実現するためのプロンプト戦略を学ぶ
+type: chapter-title
+relation: chapter04_for_Engineers/実践課題
+difficulty: 1
+displayLanguage: ja
+duration: 5
+---
+
 # 第5章: AIとの対話を深化させる高度なプロンプト戦略
 
 ## この章で学ぶこと

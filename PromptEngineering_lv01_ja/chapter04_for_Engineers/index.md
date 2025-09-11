@@ -1,3 +1,15 @@
+---
+seq: 21
+title: 第4章: システムエンジニア向けAI活用術
+slug: chapter04_for_Engineers/index
+description: システムエンジニアリングタスクに特化したAI活用の実践的なスキルを学ぶ
+type: chapter-title
+relation: chapter03/実践課題
+difficulty: 1
+displayLanguage: ja
+duration: 5
+---
+
 # 第4章: システムエンジニア向けAI活用術
 
 ## この章で学ぶこと

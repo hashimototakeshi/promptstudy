@@ -1,3 +1,15 @@
+---
+seq: 23
+title: ワーク2: 設計書作成
+slug: chapter04_for_Engineers/work2
+description: AIを活用した効率的な設計書作成のテクニックを学ぶ
+type: work
+relation: chapter04_for_Engineers/index,chapter04_for_Engineers/work1
+difficulty: 3
+displayLanguage: ja
+duration: 30
+---
+
 # ワーク2: 設計書作成
 
 ## サンプル課題
