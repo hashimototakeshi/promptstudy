@@ -6,7 +6,7 @@ type: exercise
 difficulty: 2
 displayLanguage: ja
 duration: 20
-relation: chapter02/work05,chapter02/work07
+relation: chapter02/work04
 ---
 
 # ビジネス文書を効果的に作成する - メール編

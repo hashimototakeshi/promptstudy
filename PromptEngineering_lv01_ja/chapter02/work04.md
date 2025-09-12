@@ -7,7 +7,7 @@ type: work
 difficulty: 2
 displayLanguage: ja
 duration: 20
-relation: chapter02/work03,chapter02/work05
+relation: chapter02/work01
 ---
 
 # 曖昧な指示はNG - 具体的に、詳しく伝える方法

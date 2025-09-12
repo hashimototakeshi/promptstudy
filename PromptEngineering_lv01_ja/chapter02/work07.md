@@ -1,6 +1,6 @@
 ---
 seq: 7
-title: 出力形式をコントロールする - Markdown, JSON, 表形式での出力指定
+title: 出力形式をコントロールする
 slug: chapter02/work07
 description: AIの出力形式を制御し、目的に応じたフォーマットで出力させる方法を学ぶ
 type: work

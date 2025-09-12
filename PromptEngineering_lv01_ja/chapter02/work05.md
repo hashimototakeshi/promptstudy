@@ -7,7 +7,7 @@ type: exercise
 difficulty: 2
 displayLanguage: ja
 duration: 20
-relation: chapter02/work04,chapter02/work06
+relation: chapter02/work04
 ---
 # 練習問題
 

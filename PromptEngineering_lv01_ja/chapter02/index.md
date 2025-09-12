@@ -1,10 +1,10 @@
 ---
 seq: 5
-title: 第2章プロンプトの基本作法
+title: 第2章 プロンプトの基本作法
 slug: chapter02/index
 description: プロンプトの基本的な作法を学ぶ
 type: chapter-title
-relation: chapter01/work01,chapter01/work02,chapter01/work03
+relation: 
 difficulty: 1
 displayLanguage: ja
 duration: 5
