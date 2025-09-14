@@ -1,5 +1,5 @@
 ---
-seq: 11
+seq: 23
 title: 多様な視点の獲得（ペルソナ）
 slug: chapter03/work11
 description: 異なる立場や視点から物事を捉えるためのペルソナ設定テクニックを学ぶ

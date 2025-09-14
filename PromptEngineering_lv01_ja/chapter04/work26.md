@@ -1,10 +1,10 @@
 ---
-seq: 19
+seq: 39
 title: 練習問題 部署別のキャンペーン施策を考える
 slug: chapter04/work26
 description: 部署ごとに特化したAI活用施策の考案演習
 type: exercise
-relation: chapter04_for_Business/work24
+relation: chapter04/work24
 difficulty: 2
 displayLanguage: ja
 duration: 20

@@ -1,5 +1,5 @@
 ---
-seq: 18
+seq: 38
 title: 練習問題 キャンペーン名の作成
 slug: chapter04/work25
 description: AIを活用したキャンペーン名の作成演習

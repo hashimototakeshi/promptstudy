@@ -1,5 +1,5 @@
 ---
-seq: 24
+seq: 47
 title: 練習問題1: 部署別利用状況の分析
 slug: chapter04/work34
 description: 部署ごとの利用状況を分析する演習

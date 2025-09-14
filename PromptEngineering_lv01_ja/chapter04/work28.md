@@ -1,5 +1,5 @@
 ---
-seq: 20
+seq: 41
 title: 技術仕様書の要約
 slug: chapter04/work28
 description: AIを活用した技術文書の要約演習

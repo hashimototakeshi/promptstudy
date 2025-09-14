@@ -1,5 +1,5 @@
 ---
-seq: 22
+seq: 44
 title: 部長向けリマインドメールの作成
 slug: chapter04/work31
 description: 上司向けの効果的なリマインドメール作成演習

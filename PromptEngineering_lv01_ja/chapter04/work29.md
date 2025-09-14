@@ -1,5 +1,5 @@
 ---
-seq: 21
+seq: 42
 title: メールスレッドの要約
 slug: chapter04/work29
 description: AIを活用したメールスレッドの要約演習

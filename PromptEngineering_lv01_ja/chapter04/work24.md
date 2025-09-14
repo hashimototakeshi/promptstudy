@@ -1,5 +1,5 @@
 ---
-seq: 17
+seq: 37
 title: アイデア出しの相棒
 slug: chapter04/work24
 description: AIを活用した効果的なブレインストーミングと企画アイデアの出し方を学ぶ

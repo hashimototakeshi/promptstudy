@@ -1,6 +1,7 @@
 ---
-seq: 6
+seq: 17
 title: 具体的な指示の練習問題2
+slug: chapter02/work06
 description: 具体的な指示を出すための応用練習問題に取り組む
 type: exercise
 difficulty: 2

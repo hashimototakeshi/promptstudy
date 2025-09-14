@@ -1,19 +1,19 @@
 ---
-seq: 30
+seq: 60
 title: 新たなクレームに高度なプロンプト戦略で挑む
-slug: chapter05/実践課題
+slug: chapter05/work46
 description: これまでに学んだステップバック、メタ認知、自己検証のスキルを総動員した実践的な課題に取り組む
 type: practice
-relation: chapter05/index,chapter05/work3
+relation: chapter05/index,chapter05/work36,chapter05/work39,chapter05/work42
 difficulty: 4
 displayLanguage: ja
-duration: 45
+duration: 20
 ---
 
 # 【実践課題】新たなクレームに高度なプロンプト戦略で挑む
+## 解決策の品質を高める (メタ認知の応用)
 
 :::exercise
-## 課題2: 解決策の品質を高める (メタ認知の応用)
 
 **【あなたのタスク】**
 ステップバックによる分析の結果、複数の技術的アプローチが考えられることが分かりました。高橋さんは、その中でも最も現実的な「ユーザー辞書機能」を実装する方針を固め、その基本的なデータベース設計をAIに依頼しました。

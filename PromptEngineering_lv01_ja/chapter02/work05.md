@@ -1,5 +1,5 @@
 ---
-seq: 5
+seq: 16
 title: 具体的な指示の練習問題1
 slug: chapter02/work05
 description: 具体的な指示を出すための練習問題に取り組む

@@ -1,5 +1,5 @@
 ---
-seq: 2
+seq: 13
 title: 役割設定の練習問題
 slug: chapter02/work02
 description: 役割設定を活用した効果的なプロンプトの作成方法を学ぶ

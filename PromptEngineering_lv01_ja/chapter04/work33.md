@@ -1,5 +1,5 @@
 ---
-seq: 23
+seq: 46
 title: データ分析と可視化 - CSVデータから洞察を得る方法
 slug: chapter04/work33
 description: AIを活用してCSVデータから有益なインサイトを抽出し、効果的な可視化を行う方法を学ぶ

@@ -1,5 +1,5 @@
 ---
-seq: 10
+seq: 21
 title: 実践課題
 slug: chapter02/work10
 description: これまで学んだプロンプトの基本を活用して、効果的な求人要項を作成する実践課題

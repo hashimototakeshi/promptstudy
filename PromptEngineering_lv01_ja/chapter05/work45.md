@@ -1,10 +1,10 @@
 ---
-seq: 30
+seq: 59
 title: 新たなクレームに高度なプロンプト戦略で挑む
-slug: chapter05/work10
+slug: chapter05/work45
 description: これまでに学んだステップバック、メタ認知、自己検証のスキルを総動員した実践的な課題に取り組む
 type: practice
-relation: chapter05/index
+relation: chapter05/index,chapter05/work36,chapter05/work39,chapter05/work42
 difficulty: 4
 displayLanguage: ja
 duration: 45
@@ -78,4 +78,4 @@ duration: 45
 - **メリット**: ファインチューニングほどの大量データは不要で、リアルタイムに知識を追加・更新できる。
 - **デメリット**: プロンプトエンジニアリングの工夫が必要。検索の精度が、最終的な翻訳品質に大きく影響する。
 ```
-
+</details>

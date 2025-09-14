@@ -1,5 +1,5 @@
 ---
-seq: 19
+seq: 40
 title: 情報整理
 slug: chapter04/work27
 description: AIを活用した効率的な情報整理とドキュメント作成のテクニックを学ぶ

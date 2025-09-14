@@ -1,7 +1,7 @@
 ---
-seq: 21
+seq: 26
 title: 具体例からの学習（Few-Shot）
-slug: chapter03/work21
+slug: chapter03/work14
 description: 具体例を示すことでAIの出力を制御するFew-Shotプロンプティングを学ぶ
 type: work
 relation: chapter03/index,chapter03/work11

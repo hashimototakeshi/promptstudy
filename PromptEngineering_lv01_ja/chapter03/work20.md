@@ -1,5 +1,5 @@
 ---
-seq: 41
+seq: 32
 title: 対話を通じた思考の精緻化
 slug: chapter03/work41
 description: ユーザーが質問を受ける側に回ることで思考を深める反転インタラクションを学ぶ

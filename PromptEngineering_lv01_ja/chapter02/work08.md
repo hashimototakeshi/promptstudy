@@ -1,7 +1,7 @@
 ---
-seq: 8
+seq: 19
 title: JSON形式での出力練習問題
-slug: chapter02/work09
+slug: chapter02/work08
 description: JSON形式での出力指定を学ぶ練習問題
 type: exercise
 difficulty: 2

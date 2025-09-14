@@ -1,9 +1,9 @@
 ---
-seq: 22
+seq: 27
 title: 練習問題 感情分析
-slug: chapter03/work22
+slug: chapter03/work15
 description: Few-Shotプロンプティングを使って、フィードバックの感情分析を行う
-type: work
+type: exercise
 relation: chapter03/work21
 difficulty: 3
 displayLanguage: ja

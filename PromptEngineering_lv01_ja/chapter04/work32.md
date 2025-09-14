@@ -1,5 +1,5 @@
 ---
-seq: 23
+seq: 45
 title: SNS投稿の作成
 slug: chapter04/work32
 description: エンゲージメントを高めるSNS投稿作成演習

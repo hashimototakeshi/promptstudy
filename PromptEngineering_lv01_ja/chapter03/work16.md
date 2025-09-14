@@ -1,9 +1,9 @@
 ---
-seq: 23
+seq: 28
 title: 練習問題 情報抽出
 slug: chapter03/work23
 description: Few-Shotプロンプティングを使って、テキストから構造化データを抽出する
-type: work
+type: exercise
 relation: chapter03/work21
 difficulty: 3
 displayLanguage: ja

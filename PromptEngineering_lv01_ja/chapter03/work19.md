@@ -1,9 +1,9 @@
 ---
-seq: 33
+seq: 31
 title: 練習問題 採用選考
-slug: chapter03/work33
+slug: chapter03/work19
 description: Chain of Thoughtプロンプティングを使って、採用選考を論理的に行う
-type: work
+type: exercise
 relation: chapter03/work31
 difficulty: 3
 displayLanguage: ja

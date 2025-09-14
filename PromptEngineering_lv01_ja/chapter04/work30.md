@@ -1,5 +1,5 @@
 ---
-seq: 21
+seq: 43
 title: 伝わる文章を書く - メール、ブログ、SNS投稿の作成術
 slug: chapter04/work30
 description: 目的や読み手に応じた効果的な文章作成をAIと共に行うテクニックを学ぶ

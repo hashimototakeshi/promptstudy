@@ -1,5 +1,5 @@
 ---
-seq: 25
+seq: 48
 title: 一人あたりの利用回数で見る分析
 slug: chapter04/work35
 description: 従業員数を考慮した一人あたりの利用状況分析演習

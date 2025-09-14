@@ -1,13 +1,13 @@
 ---
-seq: 30
+seq: 62
 title: 新たなクレームに高度なプロンプト戦略で挑む
-slug: chapter05/work13
+slug: chapter05/work48
 description: AIの「個性」に合わせた指示を出すことでさらなる能力を引き出すことができます
 type: column
-relation: chapter05/index,chapter05/work10,chapter05/work11
-difficulty: 4
+relation: chapter05/index
+difficulty: 1
 displayLanguage: ja
-duration: 45
+duration: 5
 ---
 
 
