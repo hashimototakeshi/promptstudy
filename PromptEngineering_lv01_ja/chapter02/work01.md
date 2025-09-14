@@ -12,8 +12,8 @@ relation: chapter02/index,chapter02/work02
 
 # AIへの上手な頼み方 - 役割設定、背景説明、条件指定のコツ
 
-## サンプル課題
 :::sample-quiz
+## サンプル課題
 管理部の塚本さんは、AIに以下のように指示を出しました。
 
 ```
