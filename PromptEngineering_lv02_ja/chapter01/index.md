@@ -1,7 +1,7 @@
 ---
 seq: 5
 title:  【チャットフロー】社内情報に詳しいチャットボット作り
-description: "Difyのワークフロー機能を使用して、システム設計書の自動生成プロセスを構築する方法を学びます。"
+description: "Difyのチャットフロー機能を使用して、システム設計書の自動生成プロセスを構築する方法を学びます。"
 slug: chapter02/index
 type: chapter-title
 relation: 
