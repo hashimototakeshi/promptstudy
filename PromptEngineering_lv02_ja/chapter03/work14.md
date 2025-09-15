@@ -1,12 +1,12 @@
 ---
-seq: 2
+seq: 17
 title: 複雑な指示を安定させる、問題解決AIアシスタント
-slug: chapter03/work02
+slug: chapter03/work14
 description: 複雑な指示を安定して実行するための3つのテクニックを学び、問題解決AIアシスタントを構築する
 type: work
 difficulty: 3
 displayLanguage: ja
-duration: 30
+duration: 25
 relation: chapter03/index
 ---
 

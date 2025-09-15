@@ -1,15 +1,15 @@
 ---
-seq: 5
-title: 【小コラム2】あなたの業務にもRAGを！具体的な活用シーン2選
+seq: 6
+title: 【小コラム】あなたの業務にもRAGを！具体的な活用シーン2選
 slug: chapter01/column02
 description: RAG技術を活用した実践的な業務効率化のアイデアを紹介
 type: column
 difficulty: 2
 displayLanguage: ja
-duration: 10
+duration: 5
 ---
 
-# 【小コラム2】あなたの業務にもRAGを！具体的な活用シーン2選
+# あなたの業務にもRAGを！具体的な活用シーン2選
 
 Work3でRAGアプリケーションの作り方を学び、前のコラムでその裏側の仕組みを知りました。では、この強力なRAG技術を、私たちは具体的にどのような業務に活かすことができるのでしょうか？
 

@@ -1,7 +1,7 @@
 ---
-seq: 7
+seq: 8
 title: ワーク5: 【実践課題】社外からの製品問い合わせに対応する顧客QAボットを開発しよう！
-slug: chapter01/work05
+slug: chapter01/work07
 description: これまで学んだ技術を活用して、実践的な顧客向けQAボットを構築する
 type: work
 difficulty: 4

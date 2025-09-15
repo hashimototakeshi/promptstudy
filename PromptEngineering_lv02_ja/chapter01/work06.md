@@ -1,12 +1,12 @@
 ---
-seq: 6
-title: ワーク4: 条件分岐による対話制御とコスト最適化
-slug: chapter01/work04
+seq: 7
+title: 条件分岐による対話制御とコスト最適化
+slug: chapter01/work06
 description: ユーザーの入力に応じた条件分岐を実装し、AIの応答を最適化する方法を学ぶ
 type: work
 difficulty: 3
 displayLanguage: ja
-duration: 25
+duration: 10
 ---
 
 # 条件分岐による対話制御とコスト最適化

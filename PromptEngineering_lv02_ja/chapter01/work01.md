@@ -1,5 +1,5 @@
 ---
-seq: 1
+seq: 2
 title: ワーク1: Difyをローカル環境に構築しよう
 slug: chapter01/work01
 description: Difyのローカル環境構築を通じて、AIアプリケーションプラットフォームの基本を理解する

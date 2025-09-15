@@ -1,7 +1,7 @@
 ---
-seq: 1
+seq: 16
 title: エージェントノードの基本と2つのアプローチで作る対話型アシスタント
-slug: chapter03/work00
+slug: chapter03/work13
 description: エージェントノードの基本概念を網羅的に学習し、宣言的アプローチと逐次的アプローチの違いを理解する
 type: work
 difficulty: 2

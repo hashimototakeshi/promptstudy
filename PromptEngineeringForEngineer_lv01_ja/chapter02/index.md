@@ -1,5 +1,5 @@
 ---
-seq: 5
+seq: 11
 title: 第2章 プロンプトの基本作法
 slug: chapter02/index
 description: プロンプトの基本的な作法を学ぶ

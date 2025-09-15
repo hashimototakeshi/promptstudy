@@ -1,5 +1,5 @@
 ---
-seq: 31
+seq: 29
 title: 段階的思考の誘導（Chain of Thought）
 slug: chapter03/work31
 description: AIの思考プロセスを段階的に誘導するChain of Thoughtプロンプティングを学ぶ

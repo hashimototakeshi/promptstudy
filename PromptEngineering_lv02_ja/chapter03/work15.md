@@ -1,12 +1,12 @@
 ---
-seq: 3
+seq: 18
 title: GrowthTech社CEOを支える、戦略担当AI役員を構築しよう
-slug: chapter03/work02
+slug: chapter03/work15
 description: 企業の最高レベルの意思決定をサポートする戦略担当AI役員を構築し、経営戦略の壁打ちパートナーとして機能させる
 type: work
 difficulty: 4
 displayLanguage: ja
-duration: 45
+duration: 20
 relation: chapter03/index
 ---
 

@@ -1,13 +1,13 @@
 ---
-seq: 4
+seq: 14
 title: 自己改善ループを搭載したSEO記事自動生成ワークフロー
-slug: chapter02/work04
+slug: chapter02/work12
 description: 実践的な課題を通じて、自己改善ループを搭載したSEO記事自動生成ワークフローを構築する
 type: practice
-difficulty: 5
+difficulty: 3
 displayLanguage: ja
 duration: 60
-relation: chapter02/work03
+relation: chapter02/work11
 ---
 
 # 【実践課題】自己改善ループを搭載したSEO記事自動生成ワークフローを実装しよう！

@@ -7,7 +7,7 @@ type: practice
 relation: chapter05/index,chapter05/work36,chapter05/work39,chapter05/work42
 difficulty: 4
 displayLanguage: ja
-duration: 45
+duration: 15
 ---
 
 # 【実践課題】新たなクレームに高度なプロンプト戦略で挑む

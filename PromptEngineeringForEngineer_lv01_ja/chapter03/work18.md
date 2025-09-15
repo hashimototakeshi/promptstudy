@@ -1,9 +1,9 @@
 ---
-seq: 32
-title: 練習問題 ROI計算
-slug: chapter03/work32
+seq: 30
+title: ROI計算
+slug: chapter03/work18
 description: Chain of Thoughtプロンプティングを使って、キャンペーンのROIを計算する
-type: work
+type: exercise
 relation: chapter03/work31
 difficulty: 3
 displayLanguage: ja
@@ -12,9 +12,9 @@ duration: 15
 
 # Chain of Thought実践（ROI計算）
 
+:::exercise
 ## 練習問題
 
-:::exercise
 **【シチュエーション】**
 あなたは、マーケティング部の担当者です。先月実施したWeb広告キャンペーンの結果を分析し、費用対効果（ROI）を算出するよう上司から指示されました。手元には、各広告媒体の出稿費用と、そこから得られた売上データがあります。
 

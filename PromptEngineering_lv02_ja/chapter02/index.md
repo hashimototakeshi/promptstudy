@@ -1,5 +1,5 @@
 ---
-seq: 5
+seq: 10
 title: "【ワークフロー】設計書作成を自動化"
 description: "Difyのワークフロー機能を使用して、システム設計書の自動生成プロセスを構築する方法を学びます。"
 slug: chapter02/index

@@ -1,7 +1,7 @@
 ---
-seq: 21
-title: 第4章: システムエンジニア向けAI活用術
-slug: chapter04_for_Engineers/index
+seq: 36
+title: 第4章 システムエンジニア向けAI活用術
+slug: chapter04/index
 description: システムエンジニアリングタスクに特化したAI活用の実践的なスキルを学ぶ
 type: chapter-title
 relation: chapter03/実践課題
@@ -10,7 +10,7 @@ displayLanguage: ja
 duration: 5
 ---
 
-# 第4章: システムエンジニア向けAI活用術
+# 第4章 システムエンジニア向けAI活用術
 
 ## この章で学ぶこと
 第3章では、Chain of ThoughtやFew-Shotといった、AIの思考プロセスを導くための強力な「プロンプトパターン」を学びました。
