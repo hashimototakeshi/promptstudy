@@ -10,7 +10,7 @@ duration: 20
 relation: chapter02/work07
 ---
 
-# 出力形式をコントロールする - Markdown, JSON, 表形式での出力指定
+# 出力形式をコントロールする - Markdown　表形式での出力指定
 
 :::exercise
 
