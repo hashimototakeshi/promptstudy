@@ -9,7 +9,9 @@ displayLanguage: ja
 duration: 20
 relation: chapter02/work02,chapter02/work04
 ---
-# AIへの上手な頼み方
+
+# AIへの上手な頼み方 - 役割設定、背景説明、条件指定のコツ
+
 :::exercise
 
 ## 練習問題
@@ -59,7 +61,7 @@ relation: chapter02/work02,chapter02/work04
 上記の役割、背景、条件をすべて満たす、メディア向けのプレスリリースの草案を作成してください。
 ```
 
-## 練習問題AI回答出力例
+### 練習問題AI回答出力例
 
 （AIによる回答のイメージ）
 ```

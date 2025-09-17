@@ -1,6 +1,6 @@
 ---
 seq: 15
-title: 曖昧な指示はNG - 具体的に、詳しく伝える方法
+title: 曖昧な指示では意図が伝わりにくい - 具体的に、詳しく伝える方法
 slug: chapter02/work04
 description: 曖昧な指示を避け、具体的で詳細な指示を出す方法を学ぶ
 type: work
@@ -10,7 +10,7 @@ duration: 20
 relation: chapter02/work01
 ---
 
-# 曖昧な指示はNG - 具体的に、詳しく伝える方法
+# 曖昧な指示では意図が伝わりにくい - 具体的に、詳しく伝える方法
 
 :::sample-quiz
 
