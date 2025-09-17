@@ -1,4 +1,16 @@
-# 【コラム01】生成AIのトークン数とは？カウント方法や失敗しないためのコツ
+---
+seq: 1
+title: トークン数とは
+slug: chapter01/work08
+description: トークン数とは？カウント方法や失敗しないためのコツを解説
+type: column
+relation: 
+difficulty: 1
+displayLanguage: ja
+duration: 10
+---
+
+# 生成AIのトークン数とは？カウント方法や失敗しないためのコツ
 
 ## はじめに
 
