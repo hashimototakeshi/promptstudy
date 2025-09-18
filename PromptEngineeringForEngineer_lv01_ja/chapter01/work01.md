@@ -1,6 +1,6 @@
 ---
 seq: 1
-title: ワーク1: まずは触ってみよう - ChatGPT、Gemini、Claudeを実際に使い比べ
+title: まずは触ってみよう
 slug: chapter01/work01
 description: 生成AIの基本的な仕組みと特性を理解し、日常業務での活用イメージを持つ
 type: work
@@ -10,7 +10,7 @@ displayLanguage: ja
 duration: 10
 ---
 
-# ワーク1: まずは触ってみよう - ChatGPT、Gemini、Claudeを実際に使い比べ
+# まずは触ってみよう - ChatGPT、Gemini、Claudeを実際に使い比べ
 
 **学習目標**: 生成AIの基本的な仕組みと特性を理解し、日常業務での活用イメージを持つ
 
@@ -18,9 +18,24 @@ duration: 10
 
 さっそく、主要な3つの生成AIモデル「ChatGPT-5」「Gemini 2.5 Pro」「Claude Sonnet 4」を実際に使い比べてみましょう。
 各モデルへのアクセス方法（すべて無料で利用可能です）：
-- **ChatGPT-5**: OpenAIのウェブサイト（chat.openai.com）
-- **Gemini 2.5 Pro**: GoogleのGeminiアプリ（gemini.google.com）
-- **Claude Sonnet 4**: AnthropicのClaudeウェブサイト（claude.ai）
+
+### **ChatGPT-5**: OpenAIのウェブサイト [chat.openai.com](https://chatgpt.com/)
+
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/img/ch1_w1_gpt1.png "")
+
+サインアップまたはログインすると、プロンプト入力画面に遷移します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/img/ch1_w1_gpt2.png "")
+
+### **Gemini 2.5 Pro**: GoogleのGeminiウェブサイト [gemini.google.com](https://gemini.google.com/app?hl=ja)
+
+Googleアカウントでログインすることでプロンプト入力画面に遷移します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/img/ch1_w1_gemini.png "")
+
+### **Claude Sonnet 4**: AnthropicのClaudeウェブサイト[claude.ai](https://claude.ai/new)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/img/ch1_w1_claude1.png "")
+
+サインアップまたはログインすると、プロンプト入力画面に遷移します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/img/ch1_w1_claude2.png "")
 
 ## 3つのモデルの開発理念と特徴
 
@@ -39,8 +54,9 @@ duration: 10
 ## サンプル課題
 
 各モデルのウェブサイトにアクセスし、以下の質問を投げかけてみましょう：
-
-**「日本企業の生産性を向上させるための具体的な施策を3つ提案してください」**
+```
+日本企業の生産性を向上させるための具体的な施策を3つ提案してください
+```
 
 3つのモデルすべてに同じ質問をして、回答の違いを観察してください。
 - 回答が始まるまでの時間
@@ -58,6 +74,8 @@ duration: 10
 
 3. **システムプロンプト**: AI開発者によってあらかじめ設定された、AIの振る舞いを決めるための「隠れた指示」の違い。安全性、創造性、正確性などのバランスが異なります。
 
+また、以下のベンチマーク表にある通り各モデルの性能によっても違いが出てきます。
+
 ## 主要生成AIモデルの性能比較（2025年最新ベンチマーク）
 
 | 比較項目 | ChatGPT-5 | Gemini 2.5 Pro | Claude Sonnet 4 | 備考 |
@@ -72,23 +90,16 @@ duration: 10
 | **一般知識 (MMLU)** | 84.2% | 79.6% | 74.4% | 幅広い分野の知識テスト |
 | **API料金 ($/1M tokens)** | 入力$1.25/出力$10 | 入力$1.25-2.50/出力$10-15 | 入力$3/出力$15 | 100万トークンあたりの価格 |
 
+出典：Artificial Analysis
+
 ## 目的別・最適モデル選択ガイド
 
+用途に応じた最適モデル選択例は以下の通りです。
+「とりあえず有名なモデルを使う」よりも、自分の目的や業務に合ったモデルを選ぶことが、生産性を大きく左右します。
+特に、ビジネス用途での利用を想定する場合には、価格やセキュリティ、データの取り扱い方針を含めた慎重な選定が重要です。
+
 **高度な推論・数学的問題**: ChatGPT-5（総合知能指数66%、数学AIME 94.6%）
-**素早い対話・顧客対応**: Claude Sonnet 4（TTFT約1.45秒、自然な日本語）
 **コーディング支援**: ChatGPT-5（SWE-bench 74.9%）、次点でClaude Sonnet 4（72.7%）
 **大規模文書の処理**: Gemini 2.5 Pro（1Mトークン入力対応）
-**最新情報が必要なタスク**: Gemini 2.5 Pro（2025年1月末までの知識）
 **高速な大量文章生成**: ChatGPT-5（100 tokens/秒）
 **読みやすい日本語文書作成**: Claude Sonnet 4（自然な日本語表現）
-
-### ここが重要！プロンプトの力
-
-ここまでモデルごとの違いを見てきましたが、実はそのモデルを使いこなすうえで重要なのが「プロンプト（質問の仕方）」です。とても優秀なChatGPT-5でも、質問の仕方を変えるだけで、まったく異なる回答を得ることができます。
-
-例えば、先ほどの質問を以下のように変えてみてください：
-
-**改善版プロンプト例：**
-「あなたは経営コンサルタントです。従業員100名規模の日本の製造業企業を想定し、生産性を向上させるための施策を3つ提案してください。各施策について、実施方法、期待効果、注意点を含めて説明してください。」
-
-このように、役割設定、具体的な条件、求める回答の形式を明確にすることで、より実用的で詳細な回答を引き出すことができます。つまり、**どのモデルを使うかも大切ですが、どのように質問するかがさらに重要**なのです。
