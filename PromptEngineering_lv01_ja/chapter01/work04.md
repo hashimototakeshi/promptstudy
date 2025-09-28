@@ -1,7 +1,7 @@
 ---
-seq: 4
+seq: 6
 title: 不適切な質問
-slug: chapter01/work03
+slug: chapter01/work04
 description: AIの得意・不得意を理解し、効果的な質問の仕方を学ぶ
 type: work
 relation: chapter01/work01

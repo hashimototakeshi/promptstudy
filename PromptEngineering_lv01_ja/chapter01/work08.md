@@ -1,5 +1,5 @@
 ---
-seq: 1
+seq: 10
 title: トークン数とは
 slug: chapter01/work08
 description: トークン数とは？カウント方法や失敗しないためのコツを解説

@@ -1,5 +1,5 @@
 ---
-seq: 2
+seq: 4
 title: ワーク1 練習問題
 slug: chapter01/work01_練習問題
 description: 3つのモデルそれぞれに異なるプロンプトを試す練習問題

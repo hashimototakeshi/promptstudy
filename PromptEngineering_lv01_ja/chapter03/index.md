@@ -1,5 +1,5 @@
 ---
-seq: 22
+seq: 23
 title: 第3章 思考を深めるプロンプト術
 slug: chapter03/index
 description: より高度なプロンプトテクニックを学び、AIの思考プロセスを活用する方法を習得する

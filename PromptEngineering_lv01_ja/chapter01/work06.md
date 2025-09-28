@@ -1,5 +1,5 @@
 ---
-seq: 4
+seq: 8
 title: 不適切な質問
 slug: chapter01/work03
 description: AIの得意・不得意を理解し、効果的な質問の仕方を学ぶ

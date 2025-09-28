@@ -1,5 +1,5 @@
 ---
-seq: 36
+seq: 38
 title: 第4章 ビジネス基本タスク実践
 slug: chapter04/index
 description: ビジネスシーンで頻出する基本タスクをAIと効率的にこなすための実践的なスキルを学ぶ

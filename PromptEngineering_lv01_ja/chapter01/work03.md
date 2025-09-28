@@ -1,7 +1,7 @@
 ---
-seq: 3
+seq: 5
 title: なぜ「質問力」が重要なのか？
-slug: chapter01/work02
+slug: chapter01/work03
 description: AIの得意・不得意を理解し、効果的な質問の仕方を学ぶ
 type: work
 relation: chapter01/work01
@@ -91,6 +91,3 @@ AI自身の能力について質問し、回答の信頼性を探ります。
 ```
 
 このように、AIを使いこなす上では、AIの出力を疑い対話や検索を通じて検証する姿勢こそが重要です。
-
-
-

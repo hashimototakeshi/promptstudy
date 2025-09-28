@@ -1,10 +1,10 @@
 ---
-seq: 36
+seq: 38
 title: 第4章 システムエンジニア向けAI活用術
 slug: chapter04/index
 description: システムエンジニアリングタスクに特化したAI活用の実践的なスキルを学ぶ
 type: chapter-title
-relation: chapter03/実践課題
+relation: 
 difficulty: 1
 displayLanguage: ja
 duration: 5
