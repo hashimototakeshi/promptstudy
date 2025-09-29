@@ -1,62 +1,59 @@
 ---
-seq: 48
-title: エラーの原因特定と対策提案
+seq: 40
+title: 技術調査・選定（ファクトチェック）
 slug: chapter04/work35
-description: これまでに学んだ技術調査、設計書作成、ログ解析のスキルを総動員した実践的な課題に取り組む
-type: practice
-relation: chapter04_for_Engineers/index,chapter04_for_Engineers/work3
-difficulty: 3
+description: AIを活用した技術調査とファクトチェックの実践的な手法を学ぶ
+type: work
+relation: chapter04_for_Engineers/index
+difficulty: 2
 displayLanguage: ja
-duration: 15
+duration: 25
 ---
-
-### 【実践課題】AIと共に進める新機能開発
+# 技術調査・選定
 
 :::exercise
-## 課題3 ログ解析
-前回の続きの課題となります。
-設計に基づき簡単なテストコードを動かしたところ、API連携部分で以下のエラーログが出力されました。
+## 練習問題
+**【シチュエーション】**
+高橋さんはAIが作成した比較表を見て、翻訳精度の評判が高い「DeepL API」に興味を持ちました。しかし、顧客のテキストデータを外部APIに送信するため、セキュリティ面が気になっています。特に、**「送信したデータはAIの学習に使われてしまうのか？」「通信は暗号化されているのか？」**といった点を確認したいと考えています。
 
-**▼ 出力されたエラーログ**
-```json
-{
-  "error": {
-    "code": 401,
-    "message": "Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See [https://developers.google.com/identity/sign-in/web/devconsole-project](https://developers.google.com/identity/sign-in/web/devconsole-project).",
-    "status": "UNAUTHENTICATED"
-  }
-}
-```
-
-**【あなたのタスク】**
-このエラーログの原因を特定し、考えられる対策をAIに提案させるプロンプトを作成してください。
+さあ、実際にChatGPTやGeminiなどの対話AIを使って、DeepL APIのセキュリティに関する情報を調べさせるプロンプトを作成してみましょう。
 :::
 
-:::Hint
-AIは、関連性の高い背景情報（コンテキスト）を具体的に与えるほど、精度の高い推論を行います。ワーク3で学んだように、「このエラーメッセージは何？」と聞くだけでなく、**「どのAPIを呼び出した際に」「どんな状況で」**このエラーが出たのか、という**コンテキスト（背景情報）**を具体的に与えることが、的を射た回答を引き出すための鍵となります。今回は、エラーログに加えて「Google Cloud Vision APIを呼び出した際に発生した」という情報を添えてみましょう。
+:::hint
+AIに正確な情報を引き出させるには、**第2章で学んだ「プロンプトの基本作法」**を思い出すことが重要です。AIに**「役割（例: ITコンサルタント）」**を与え、**「背景（顧客データを扱うためのセキュリティ懸念）」**を伝え、**「具体的な指示（確認したい項目をリストアップ）」**と**「制約（公式サイトの情報に基づく）」**を明確に指定しましょう。これにより、AIはあなたの意図を正確に理解し、的を射た回答を生成しやすくなります。
 :::
 
 <details>
-<summary>▼課題3 プロンプト例</summary>
+<summary>練習問題 プロンプト例</summary>
+
 
 ```markdown
-あなたは、クラウドAPI連携のトラブルシューティングを専門とするエンジニアです。
-以下のエラーログについて、原因と解決策を分析してください。
+あなたは、Webサービスのセキュリティに詳しいITコンサルタントです。
+「DeepL API」の導入を検討していますが、セキュリティに関する懸念があります。
 
-# コンテキスト
-- Google Cloud Vision API を呼び出した際に、このエラーレスポンスが返ってきました。
+DeepL APIの公式サイトの情報を基に、以下の点について分かりやすく解説してください。
 
-# エラーログ
-{
-  "error": {
-    "code": 401,
-    "message": "Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
-    "status": "UNAUTHENTICATED"
-  }
-}
-# 指示
-このエラーの原因として考えられることを、箇条書きで複数挙げてください。また、それぞれの原因に対する具体的な解決策も提示してください。
+# 確認したいセキュリティ項目
+- 送信したテキストデータの取り扱い（二次利用やAIの学習への利用の有無）
+- データ保存に関するポリシー（リクエスト完了後のデータ保持期間）
+- 通信の暗号化方式
 ```
 
+### 練習問題1AI回答出力例
+（AIによる回答のイメージ）
+
+```markdown
+承知いたしました。ITコンサルタントとして、DeepL APIのセキュリティについて解説します。公式サイトの情報を基に回答します。
+
+### DeepL APIのセキュリティポリシー概要
+
+- **テキストデータの取り扱い**: DeepL API（Proプラン）で処理されたテキストは、いかなる第三者にも渡ることはなく、DeepLの翻訳モデルの学習にも**使用されません**。翻訳が完了すると、テキストと翻訳結果は直ちに削除されます。
+- **データ保存**: APIリクエストで送信されたテキストデータは、リクエスト処理に必要な期間のみサーバーに保持され、処理完了後に**直ちに削除**されます。永続的に保存されることはありません。
+- **通信の暗号化**: クライアントとDeepL APIサーバー間の通信は、最新の**TLS (Transport Layer Security)** によって暗号化されています。これにより、第三者によるデータの盗聴や改ざんを防ぎます。
+
+**結論として、DeepL API Proプランは、送信データのプライバシーが保護されるよう設計されており、ビジネス利用において高いセキュリティ水準を満たしていると言えます。**
+
+より詳細な情報や最新のポリシーについては、必ずDeepLの公式サイトや利用規約をご確認ください。
+```
 </details>
 

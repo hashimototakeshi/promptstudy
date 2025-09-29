@@ -1,5 +1,5 @@
 ---
-seq: 49
+seq: 51
 title: 第5章 AIとの対話を深化させる高度なプロンプト戦略
 slug: chapter05/index
 description: AIとのより高度な対話を実現するためのプロンプト戦略を学ぶ

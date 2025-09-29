@@ -1,0 +1,4 @@
+keyword:生成AI 活用事例 ビジネス
+length:2000
+target:中小企業経営層・IT担当
+goal:問い合わせ・見積依頼の増加
