@@ -12,28 +12,35 @@ duration: 20
 # Difyをローカル環境に構築しよう 
 
 あなたはGrowthTechの社員食堂で昼食を食べていると、管理部の塚本さんが話しかけてきました。
-「社内規定とかマニュアルがあちこちに散らばってて、社員からの同じような質問に何度も答えてたら自分の業務に手が回らなくて...GeminiみたいなAIが窓口として社員の質問に答えてくれるチャットボットになったりしませんか？」
+
+「先日はありがとうございました。おかげさまでAIと壁打ちしながら弊社で求めていた人材を言語化できまして、入社してくれた社員も楽しそうに働いてます。ただ新規参画者の方々が増えたこともあって最近別のことで困ってるんですが、聞いてくれますか？」
+
+**塚本さんのお悩み**
+
+`社内規定とかマニュアルがあちこちに散らばってて、社員からの同じような質問に何度も答えていたら自分の業務に手が回らなくて...GeminiみたいなAIが窓口として社員の質問に答えてくれるチャットボットになったりしませんか？`
 
 さて、皆さん。この身近な課題、もしこれまで学んできたプロンプトの知識だけで解決するとしたら、どうしますか？
+
 おそらく、就業規則のPDFをコピーしてGeminiに貼り付け、「この内容から質問に答えて」と指示する方法を考えるかもしれませんね。
+
 しかし、その方法では、分厚いマニュアルすべてを一度に扱えなかったり、毎回の会話で社員が同じ文書を貼り付ける必要があったりと、実用的ではありません。
 
-そこで登場するのが、**Dify**というAIエージェント開発プラットフォームです。
+そこで登場するのが、**Dify**というAIアプリケーション開発プラットフォームです。
 Difyを使うと社内文書をAIに学習させ、誰もが簡単に使えるチャットボットをノーコード／ローコードで構築し、公開も可能です。
 
 ##　なぜDifyなのか？
 AIエージェント開発プラットフォーム自体は他にもいくつか公開されていますが、以下の点でDifyが優れています。
-☆ クラウド版／コミュニティ版で利用環境を選べる
-☆ コミュニティが活発で更新頻度が高い（新機能・修正への対応）
-☆ 日本国内における企業内活用実績も多い
-☆ 今あるPCではじめられる
-☆ 様々な外部システム（SlackやGoogle workspaceなど）と直接連携可能
-☆ チャットボットからエージェントまで、ノーコードの開発領域が広い
-☆ 基本的なRAGも簡単に構築できる
-☆ モジュール化（フローをDSLファイル化）して再利用できる
-☆ フローを外部システムからAPIで呼び出せして活用できる
+-  クラウド版／コミュニティ版で利用環境を選べる
+- コミュニティが活発で更新頻度が高い（新機能・修正への対応）
+- 日本国内における企業内活用実績も多い
+- 今あるPCではじめられる
+- 様々な外部システム（SlackやGoogle workspaceなど）と直接連携可能
+- チャットボットからエージェントまで、ノーコードの開発領域が広い
+- 基本的なRAGも簡単に構築できる
+- モジュール化（フローをDSLファイル化）して再利用できる
+- フローを外部システムからAPIで呼び出せして活用できる
 
-この第6章では、コミュニティ版Difyをローカル環境に構築し、AIの力を活用した社内FAQボットの基盤を作成します。
+この講座ではコミュニティ版Difyをローカル環境に構築し、AIを活用したアプリケーションを開発します。
 
 ## 1. 環境構築の準備
 
@@ -45,50 +52,60 @@ AIエージェント開発プラットフォーム自体は他にもいくつか
 - RAM: 4GB以上
 - OS：64ビット版のWindows10、11　Home、Pro、Enterprise
 
-2.Difyを動かすための環境として、GitとDockerを準備しましょう。
+
+2. Difyを動かすための環境として、GitとDockerを準備しましょう。
 
 **Gitのインストール**
-Git公式サイトからインストーラーをダウンロードします。
-[Download for Windows](https://git-scm.com/downloads/win)
 
-画像
+[Git公式サイト](https://git-scm.com/downloads/win)からインストーラーをダウンロードします。
+
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/git1.png)
+
 ダウンロードしたインストーラーを実行します。
 
-画像
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/git2.png)
+
 インストーラーを実行（デフォルト設定でOKです）
 ライセンスの確認をします
 
-画像
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/git3.png)
+
 ライセンスの確認
 インストール先の選択をします　(デフォルト)
 
-画像
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/git4.png)
+
 インストールするものを選択します　(デフォルト)
 
-画像
-スタートメニューを作成するフォルダーを選択　(デフォルト)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/git5.png)
 
-画像
+スタートメニューを作成するフォールダーを選択　(デフォルト)
+
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/git6.png)
+
 エディターの選択
 今回エディターは使用しませんが
 一般的に使用されている「Visual Studio Code」を選択しました
 
-画像
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/git7.png)
+
 新規リポジトリで作成される初期ブランチの名前を決める
 Override the default branch name for new repositoriesを選択
 「main」というブランチ名を推奨します
 
-画像
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/git8.png)
+
 環境設定の設定をします
 
-画像
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/git9.png)
+
 SSH実行に利用するものを選択します（デフォルト）
 
-画像
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/git10.png)
+
 GitでHTTPS通信時に利用する
 SSL/TLSライブラリを選択します（デフォルト）
 
-画像
 テキストファイルの改行コードの設定をします（デフォルト）
 
 画像
@@ -114,59 +131,68 @@ Gitのインストールができている確認
 画像
 コマンドプロンプトが開いたら以下のコマンドを入力します。
 
-`git -v`
+git -v
 
+copy
 インストールが正常にできていれば、Gitのバージョンが表示されます。
 
 画像
 Gitのインストール方法は以上となります！
 
+
 3. **Docker Desktopのインストール**
+
 ⚠️ Docker Desktopのインストール後、PCの再起動が必要です。
 
-公式サイトからインストーラーをダウンロード
-[Docker Desktop install](https://docs.docker.com/desktop/setup/install/windows-install/)
+[公式サイト](https://docs.docker.com/desktop/setup/install/windows-install/)からインストーラーをダウンロード
 
-画像
+
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/Docker1.png)
 ダウンロードしたインストーラーを実行します。
 
-画像
 インストーラーを実行すると以下の画面が表示されます。
 「OK」ボタンをクリックすると自動的にインストールが始まります。
 WSLが入っていない場合は、一緒にインストールしてくれます。
 時間がかかると思いますが、完了画面へ進むまでお待ちください。
 
-画像
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/Docker3.png)
 「Close and restart」をクリックし、PCを再起動します。
 
-画像
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/Docker2.png)
+
 PCの再起動が終わったら、Docker Desktopを起動します。
 
-画像
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/Docker4.png)
+
+
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/Docker5.png)
 メールアドレス入力の画面ですが、メアドの入力をしなくても利用可能なので、右上の「Skip」ボタンをクリックします。
 
-画像
 アンケートも「Skip」します。
 
 画像
 以下のような画面に進めたらDocker Desktopのインストールが完了です！
 
 4. **DifyをDocker Desktopへ導入**
+
 手順は頻繁に変わる場合があるため日本語ドキュメントもご確認ください。
 
 GitからDifyのソースコードを取得
 エクスプローラーを開きCドライブに「tool」という空のフォルダーを作成します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/clone1.png)
 
-画像
 toolフォルダーをクリックし、Shiftキー＋右クリックし
 「PowerShellウィンドウをここで開く」をクリックします。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/clone2.png)
+
 以下のコマンドを実行し、GitからDifyのソースコードを取得します。
 
 `git clone https://github.com/langgenius/dify.git`
 
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/clone3.png)
+
 全て100％になっていたらDifyのソースコードの取得が完了です！
 
-画像
 5. **Difyの起動**
 PowerShellウィンドウで以下のコマンドを入力します。
 ・difyソースコードのdockerディレクトリに移動
@@ -184,14 +210,14 @@ Docker コンテナを起動する
 上記のコマンドを実行しDifyのローカル画面にアクセスしましょう！
 
 >http://localhost/install
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/clone4.png)
 
 アカウントのセットアップとログインをします。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/clone5.png)
 
-画像
-画像
 ログイン後以下の画面が表示されたらローカル環境の構築が完了です！
 http://localhost/
-
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/dify1.png)
 
 ### Mac編
 1. **システム要件のチェック**
@@ -238,33 +264,40 @@ http://localhost/
 
 1. **Google AI Studioにアクセス**
    - [Google AI Studio](https://aistudio.google.com/) にアクセスし、Googleアカウントでログインします。
-
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/api1.png)
 2. **APIキーの取得**
    - 画面右上の設定アイコン（⚙️）をクリックし、「APIキー」を選択します。
    - 「APIキーを作成」をクリックし、表示されたAPIキーをコピーします。
    - **重要**: このAPIキーは他人に知られないように注意してください。
-
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/api2.png)
 ## 3. DifyでGeminiモデルを設定
 
 1. **Difyにログイン**
    - 先ほど作成した管理者アカウントでDifyにログインします。
-
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/clone5.png)
 2. **モデルプロバイダーの設定**
    - 画面右上のアカウントマークを押下し、「設定」→「モデルプロバイダー」を選択します。
+   ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/api3.png)
    - 「Gemini」の「セットアップ」ボタンをクリックします。Geminiモデルが見当たらない場合は、「モデルプロバイダーをインストールする」からGeminiを選んでインストールボタンを押下してください。
+      ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/api4.png)
    - 先ほどコピーしたAPIキーを貼り付け、「保存」をクリックします。
+      ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/api5.png)
 
 3. **モデルの確認**
    - 画面上側のメニューから「スタジオ」→「最初から作成」を選択します。
-   - アプリタイプは「チャットアプリ」を選択し、アプリ名を入力して「作成する」をクリックします。
+   ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/api6.png)
+   - アプリタイプは「チャットフロー」を選択し、アプリ名を入力して「作成する」をクリックします。
+   ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/api7.png)
    - アプリケーションが作成されたら、LLMノードを押下して設定画面を開きます。
    - AIモデルに「Gemini」モデルが表示されていれば、設定は完了です。
+   ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/api8.png)
 
 ## 4. 動作確認
 
 1. **テストチャット**
    - 画面右上の「プレビュー」ボタンを押下し、メッセージを送信してみましょう。
    - Geminiモデルからの応答が返ってくれば、正常に動作しています。
+   ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/api9.png)
 
 2. **エラーが表示された場合**
    - APIキーが正しく設定されているか確認してください。
