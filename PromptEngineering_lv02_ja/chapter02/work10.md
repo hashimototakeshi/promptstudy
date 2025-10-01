@@ -12,76 +12,108 @@ relation: chapter02/index,chapter02/work09
 
 # ツールの連携による自動化の拡張
 
-先ほどのワークでは、ワークフローの基本構造を学びました。しかし、実際の業務自動化では、単にAIに文章を生成させるだけでなく、外部の情報（ファイルやWebサイト）を参照したり、他のツールと連携させたりする場面が頻繁にあります。
+先ほどのワークでは、ワークフローの基本構造を学びました。しかし、実際の業務では単にAIに文章を生成させるだけでなく、外部の情報（ファイルやWebサイト）を参照したり、他のツールと連携して出力するなど、外部ツールを併用する業務が多くあります。
 
-ここでは、Difyの自動化能力をさらに引き出す「**ツール連携**」に焦点を当てます。高橋さんの課題解決に向け、ユーザーがアップロードした「要件定義書」をAIが読み解き、それを基に**Tavily Searchで質の高い技術調査を行い、次のWork3で設計書を作成できる形に検索結果を整える**という、より実践的な自動化パイプラインの構築に挑戦します。
-
+このワークでは、ワークフローで自動化できる範囲を広げるために「**ツール連携**」に焦点を当てます。高橋さんの「要件定義書をもとにWebで自動調査して、設計書まで自動で作成してくれるツールがほしい」というお悩みの解決に挑戦していきます。
 
 ## Difyのツール連携を理解しよう
 
-Difyの自動化（チャットフローとワークフロー）の真価は、LLMだけでなく、様々な「ツール」をパイプラインに組み込める点にあります。
+Difyのチャットフローやワークフローの真価は、LLMだけでなく、様々な「ツール」をパイプラインに組み込める点にあります。
 
 ### ツールとは？
 
-Difyにおける「ツール」とは、LLM以外の特定の機能を持つノードです。これらをマーケットプレイスから追加しパイプラインに組み込むことで、あなたの自動化アプリケーションは単なる文章生成器から、多機能な業務システムへと進化します。
+Difyにおける「ツール」とは、特定の機能を持つノードです。これらをマーケットプレイスから追加しパイプラインに組み込むことで、あなたの自動化アプリケーションは単なる文章生成アプリから、多機能な業務システムへと進化します。
 
 マーケットプレイスには、以下のような様々なカテゴリーのツールがあります。
 
-* **Web情報収集ツール**: **Tavily Search**など。言語モデルでの利用に最適化された検索結果や、Webページの内容を取得します。
+* **Web情報収集ツール**: **Tavily**や*Google*など。言語モデルでの利用に最適化された検索結果や、Webページの内容を取得します。
 * **生産性向上ツール連携**: **Slack**, **Notion**, **Google Workspace**など。日々の業務で使うツールに通知を送ったり、会議の議事録を自動で書き込んだりします。
 * **マルチモーダルAIツール**: **Stable Diffusion** (画像生成) や **ElevenLabs** (音声合成) など。テキストだけでなく、画像や音声も扱えるようになります。
 * **カスタムAPIツール**: **外部API呼び出し**ツールなど。社内システムや外部の様々なサービス（例：天気予報API、株価API）と連携し、自動化の可能性を無限に広げます。
 
-これらのツールをLLMと組み合わせることで、「**Webで技術情報を収集し → LLMに分析・要約させ → 結果を設計書としてまとめる**」といった、人間の知的労働を模倣した複雑な自動化が実現可能になるのです。
+これらのツールをLLMと組み合わせることで、「**Webで技術情報を収集し → LLMに分析・要約させ → 結果を設計書としてまとめる**」といった、人間が実際に行う業務を模倣した複雑な自動化が実現可能になるのです。
 
 ## 実践：要件から技術調査を行い結果を整形するワークフローを作成する
 
-### ✅ 実践の前に：Tavily Searchツールの準備をしよう 🔧
+これから1つのワークフローを前編と後編のワークに分けて構築していきます。
+おおまかなフローの全体像は以下の通りですが、このワークでは1から3までを実装します。
 
-このワークでは **Tavily Search** を使用します。これは外部のサービスと連携するため、APIキーの設定が必要です。
+このワークで構築するもの
 
-**Tavily Search APIキーの取得方法:**
+```
+1. ユーザーがアップロードした「要件定義書」をAIに渡し、調査すべき問いをいくつかの観点で**考える**。
+
+2. その問いをもとに**Tavily**ツールを使ってWeb上で**技術調査を行う**。
+
+3. 検索結果を、次のワークで設計書を作成できる形に**整える**。
+```
+次のワークで構築するもの
+```
+4. 「要件定義書」と「Web検索の結果」を精査し、設計書を作成するために必要不可欠な技術的ポイント、採用すべきアーキテクチャのパターン、潜在的なリスクなどを**分析**する。
+
+5. 設計書の**執筆と修正をループ実行する**。
+```
+
+### ✅ 実践の前に：Tavilyツールの準備をしよう 🔧
+
+このワークでは **Tavily**ツール を使用します。これは外部のサービスと連携するため、APIキーの設定が必要です。
+
+**Tavily APIキーの取得方法:**
 
 1.  [Tavily公式サイト](https://tavily.com)にアクセスし、アカウントを作成します。
-2.  ログイン後、ダッシュボードでAPIキーを発行し、安全な場所にコピーしておきます。
-3.  執筆時点では、月1000回までのAPIコールは**無料**で利用できます。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-1.png)
+
+2.  ログイン後、ダッシュボードでAPIキーをコピーし、安全な場所にコピーしておきます。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-2.png)
+
+3.  執筆時点(2025年9月)では、月1,000回までのAPIコールは**無料**で利用できます。
 
 **Difyへのツール追加:**
 
 1.  Dify画面上部のメニューから `ツール` を選択します。
-2.  `マーケットプレイス` で `Tavily Search & Extract` を検索し、`インストール` をクリックします。
-3.  `ツール` タブに戻り、`Tavily Search` の `認証を設定` をクリックします。
-4.  先ほど取得した **APIキー** を入力して保存します。
+2.  `マーケットプレイス` で `Tavily` を検索し、`インストール` をクリックします。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-3.png)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-4.png)
 
-これで、ワークフローでTavily Searchが使えるようになりました。
+3.  `ツール` タブに戻り、`Tavily` の `認証を設定` をクリックします。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-5.png)
+
+4.  先ほど取得した **APIキー** を入力して保存します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-6.png)
+
+これで、ワークフローでTavilyツールを呼び出せるようになりました。
 
 ### Step 1: ワークフローの準備と開始ノードの設定
 
+このワークで構築する
+「**Webで技術情報を収集し → LLMに分析・要約させ → 結果を設計書としてまとめる**」
+
 まず、ユーザーが要件定義書をアップロードするための入り口（トリガー）を作ります。
 
-1.  ワークフローを新規に作成します。
+1.  ワークフローを新規に作成します。（アプリ名：自動調査&設計書作成）
 2.  `開始` ノードをクリックし、ファイルアップロード用の変数を1つ作成します。
     * **フィールドタイプ**: `単一ファイル`, **変数名**: `requirements_doc`, **ラベル名**: `要件定義書`, **サポートされたファイルタイプ**: `ドキュメント`に✅, **必須**: ON
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-7.png)
 
-### Step 2: ドキュメントからテキストを抽出する（ドキュメントを抽出ノード）
+### Step 2: ドキュメントからテキストを抽出する（テキスト抽出ノード）
 
 **【解説】**
-LLMノードに直接ファイル変数を渡すと、Difyの内部的なファイル処理が原因で予期せぬエラーが発生することがあります。この問題を回避するため、Difyに**デフォルトで搭載されている「ドキュメントを抽出」ノード**を使い、アップロードされたファイルから安全にテキスト情報だけを抜き出します。
+開始ノードでアップロードされたファイルをLLMノードに直接渡すと、Difyの内部的なファイル処理が原因で予期せぬエラーが発生することがあります。この問題を回避するため、Difyに**デフォルトで搭載されている「テキスト抽出」ノード**を使い、アップロードされたファイルから安全にテキスト情報だけを抜き出します。
 
-1.  `開始` ノードの次に、`ツール`カテゴリの中にある `ドキュメントを抽出` ノードを追加します。
-2.  `ファイル` の入力欄に、開始ノードのファイル変数 `{{#start.requirements_doc#}}` を設定します。
-3.  このノードは、PDFやDOCX、TXTなど様々な形式のファイルからテキストを抽出し、文字列として出力します。
+1.  `開始` ノードの次に、`ツール`カテゴリの中にある `テキスト抽出` ノードを追加します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-8.png)
 
+2.  `入力変数` の欄に、開始ノードのファイル変数 `{{開始/requirements_doc}}` を設定します。このノードは、PDFやDOCX、TXTなど様々な形式のファイルからテキストを抽出し、文字列として出力して別のノードに渡すことができます。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-9.png)
 
-### Step 3: ステップバック思考でリサーチクエリ配列を生成する（リサーチ戦略LLM）
+### Step 3: 検索クエリ配列を生成する（LLMノード）
 
-要件定義書から直接検索するのではなく、AIに「**調査すべき核心的な問い**」を考えさせ、後のイテレーション処理で使えるように**JSON配列形式**で出力させます。
+要件定義書のどのような情報をもとにWebを検索するべきか、つまり「**調査すべき核心的な問い**」をAIに考えさせます。
 
 1.  `開始` ノードの次に `LLM` ノードを追加します。
-2.  `システムプロンプト` に、JSON配列形式でクエリを出力するよう指示を貼り付けます。
+2.  `システムプロンプト` に、以下の指示を貼り付けます。ここでは第5章で学んだステップバック思考を指示に含めることで、一歩引いて俯瞰した立場でAIに考えてもらいましょう。
 
 ```markdown
-
 # 役割
 あなたは、大規模Webサービスの開発経験が豊富な、世界トップクラスのシステムアーキテクトです。同時に、技術的な課題を解決するために、最も効果的な検索クエリを組み立てることに長けた熟練のリサーチャーでもあります。
 
@@ -99,10 +131,8 @@ LLMノードに直接ファイル変数を渡すと、Difyの内部的なファ�
 # 少数例示 (Few-Shot Example)
 ## 入力となる要件定義書の例:
  「ユーザー同士がリアルタイムでテキストメッセージを送り合えるチャット機能を追加する。オンラインステータスの表示も必要。」
-```
 
 ## 期待する出力形式例 (JSON):
-```json
 [
 "real-time chat WebSocket SSE scalability comparison",
 "WebSocket security best practices hijacking injection",
@@ -111,16 +141,26 @@ LLMノードに直接ファイル変数を渡すと、Difyの内部的なファ�
 "chat message history database performance millions"
 ]
 ```
+出力形式ですが、後の`イテレーション`ノードで使えるように**JSON配列形式**で出力させています。
 
-3.  `ユーザー入力` に `{{#start.requirements_doc#}}` を設定します。
+3.  `+メッセージ追加`ボタンをクリックして、`USER`欄に以下を設定することで、テキスト抽出ノードの出力結果を要件定義書として渡します。
+```
+#要件定義書
+{{テキスト抽出/text}}
+```
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-10.png)
 
-### Step 4: クエリ文字列を配列型に変換する (コード)
+### Step 4: 検索クエリの文字列を配列型に変換する (コード実行ノード)
 
 **【解説】**
-LLMノードが出力したのは、あくまでJSON形式の「**文字列**」です。一方、次のイテレーションノードが処理できるのは、Difyのネイティブな「**配列(Array)型**」のデータのみです。このため、間にコードノードを挟んで、文字列から配列型へとデータ形式を変換してあげる必要があります。
+LLMノードが出力したのは、あくまでJSON形式の「**文字列**」です。一方、次のイテレーションノードが処理できるのは、Difyのネイティブな「**配列(Array)型**」のデータのみです。このため、間にコード実行ノードを挟んで、文字列から配列型へとデータ形式を変換してあげる必要があります。
 
-1.  `LLM` ノードの次に `コード` ノードを追加します。
-2.  入力変数 `llm_output_string` に `{{#llm_1.text#}}` を設定します。
+1.  `LLM` ノードの次に `コード実行` ノードを追加します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-11.png)
+
+2.  入力変数 `llm_output_string` に `{{#LLM/text#}}` を設定します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-12.png)
+
 3.  以下のPythonコードを貼り付けて、JSON文字列をPythonのリスト（Difyの配列型に対応）に変換します。
 
 ```python
@@ -160,137 +200,176 @@ def main(llm_output_string: str) -> dict:
 ```
 
 4.  出力変数 `queries_array` を `Array(String)` 型として設定します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-13.png)
 
-### Step 5: 複数の検索クエリを並列実行する (イテレーション & Tavily Search)
+### Step 5: 複数の検索クエリを並列実行する (イテレーションノード & Tavilyツール)
 
-配列型に変換された複数の検索クエリを一つずつ、かつ高速に実行するため、イテレーションノードの**パラレルモード**を活用します。
+`イテレーション（反復処理）` ノードは、配列で渡された全てのデータに対して同じステップを複数回実行し、すべての結果を出力することができます。
 
-1.  `コード` ノードの次に `イテレーション` ノードを追加します。
-2.  イテレーションノードの設定で、`入力` に **Step 3のコードノードが出力した配列** `{{#コード実行（配列変換）.queries_array#}}` を指定し、`パラレルモード` を **ON** にします。
-3.  イテレーションノード内の `+ブロックを追加` をクリックし、`ツール` タブから `Tavily Search` ノードを配置します。
-4.  `Tavily Search` の入力変数 `Query` に `{{#イテレーション.item#}}` を設定します。
+このワークでは配列型に変換された複数の検索クエリを一つずつ、かつ高速に実行するため、`イテレーション`ノードを活用します。
 
+1.  `コード実行` ノードの次に `イテレーション` ノードを追加します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-14.png)
+
+2.  `イテレーション`ノードの設定で、入力欄に **Step 3のコード実行ノードが出力した配列** `{コード実行/queries_array}}` を指定し、`パラレルモード` を **ON** にします。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-15.png)
+
+3.  `イテレーション`ノード内の `+ブロックを追加` をクリックし、`ツール` タブから `Tavily Search` ノードを配置します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-16.png)
+
+4.  `Tavily Search` の `ワークスペースのデフォルト` をクリックして、Tavilyツール準備時に認証したAPIキーに切り替えます。
+
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-17.png)
+
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-18.png)
+
+5.  `Tavily Search` の入力変数 `Query` に `{{#イテレーション.item#}}` を設定します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-19.png)
+
+:::POINT
 ## パラレルモードの利点と注意点
 
-### 利点
+#### 利点
 パラレルモードをONにすると、複数の検索（APIコール）が同時に実行されます。例えば5つの検索クエリがあり、1回の検索に3秒かかるとします。通常（逐次実行）では 3秒 × 5回 = 15秒 かかりますが、パラレルモードでは理論上は約3秒で完了します。このように、API連携など待ち時間が発生する処理を複数回行う場合に、ワークフロー全体の実行時間を大幅に短縮できるのが最大のメリットです。
 
-### 課題
+#### 課題
 非常に便利な機能ですが、Difyのバージョンや実行環境によっては、同時に完了した各処理の結果を正しく一つに集約できない場合があります。その結果、「最後のキーワードの検索結果しか次のノードに渡されない」といったデータ欠損の問題が発生することがあります。
 
-### 回避策
+#### 回避策
 もし後続のステップでデータが不足しているなどの問題が発生した場合は、まずパラレルモードをOFFにして、逐次実行（一つずつ順番に実行）で試すのが最も確実な解決策です。 逐次実行は時間はかかりますが、各ステップの結果を確実につなぐことができます。
+:::
 
+### Step 6: 検索結果をスコアでフィルタリングし、整形する (コード実行ノード @イテレーション内部)
 
-### Step 6: 検索結果をスコアでフィルタリングする (コード @イテレーション内部)
+Tavily Searchの初期機能として、検索結果に関連性スコアが含まれています。スコアが低い結果を除外する処理を組み込むことで、後続のノードに質の高い情報のみを渡すことができます。
 
-Tavily Searchの検索結果には関連性スコアが含まれています。スコアが低い結果を除外し、情報の精度を高めます。この処理はループの内部で行います。
+また、検索結果は「**配列の配列**」（例: `[[検索1の結果], [検索2の結果], ...]`) というネストした構造になります。このままでは後続のLLMが扱いにくいため、オブジェクトの配列をLLMが読みやすい単一の文字列に変換する処理も同時に実行します。
 
-1.  イテレーションノード内の `Tavily Search` ノードの次に `コード` ノードを追加します。
-2.  コードノードの入力変数 `arg1` に `{{#Tavily Search.json#}}` を設定します。
-3.  以下のPythonコードを貼り付け、関連スコアが `0.5` 以上の結果のみを抽出します。
+1.  イテレーションノード内の `Tavily Search` ノードの次に `コード実行` ノードを追加します。
+
+2.  コードノードの入力変数 `arg1` に `{{TavilySearch/json}}` を設定します。
+3.  以下のPythonコードを貼り付け、関連スコアが `0.5` 以上の結果のみを抽出して整形します。
 
 ```python
-def main(arg1: list[dict]) -> dict:
-    threshold = 0.5 # 関連性のスコアの閾値
-    filtered_results = []
-    for result in arg1[0].get("results", []):
-        if result.get("score", 0) >= threshold:
+def main(arg1: list) -> dict:
+    
+    threshold = 0.5  # 関連性スコアの閾値
+
+    # --- STEP 0: 入力正規化 ---
+    results: list[dict] = []
+    try:
+        if isinstance(arg1, list) and arg1:
+            # 標準: [ { "results": [...] } ]
+            if isinstance(arg1[0], dict) and "results" in arg1[0]:
+                for item in arg1[0].get("results", []):
+                    if isinstance(item, dict):
+                        results.append(item)
+            # フラット: [ {title,url,content,score}, ... ]
+            elif all(isinstance(x, dict) for x in arg1):
+                results = arg1[:]
+            # まれにネスト: [ [ {...}, ... ], [ {...} ] ]
+            elif isinstance(arg1[0], list):
+                for sublist in arg1:
+                    if isinstance(sublist, list):
+                        for item in sublist:
+                            if isinstance(item, dict):
+                                results.append(item)
+    except Exception:
+        # 予期しない形状の場合は空として扱う
+        results = []
+
+    # --- STEP 1: スコアでフィルタリング ---
+    filtered_results: list[dict] = []
+    for r in results:
+        raw_score = r.get("score", 0)
+        try:
+            score = float(raw_score)
+        except (TypeError, ValueError):
+            score = 0.0
+
+        if score >= threshold:
             filtered_results.append({
-                "title": result.get("title"),
-                "url": result.get("url"),
-                "content": result.get("content"),
-                "score": result.get("score"),
+                "title": r.get("title"),
+                "url": r.get("url"),
+                "content": r.get("content"),
+                "score": score,
             })
-    return {
-        "filtered_results_per_query": filtered_results,
-    }
-```
-4.  コードノードの出力変数 `filtered_results_per_query` を `Array(Object)` 型として設定します。
-5.  イテレーションノードの `出力` に、このコードノードの出力 `{{#コード実行（スコアでフィルタリング）.filtered_results_per_query#}}` を設定します。
 
-
-### Step 7: ネストした配列をフラットに整形し、各検索結果を文字列に変換 (コード)
-
-**【解説】**
-パラレル実行されたイテレーションノードの出力は、各ループの結果をまとめた「**配列の配列**」（例: `[[検索1の結果], [検索2の結果], ...]`) というネストした構造になります。
-このままでは後続のLLMが扱いにくいため、オブジェクトの配列をLLMが読みやすい単一の文字列に変換するようにします。
-
-1.  `イテレーション` ノードの次に、新しい `コード` ノードを追加します。
-2.  入力変数 `nested_array` に、イテレーションノード全体の出力 `{{#イテレーション.output#}}` を設定します。
-3.  以下のPythonコードを貼り付け、配列の配列を一つの配列にまとめます。
-
-```python
-import json
-
-def main(nested_array: list) -> dict:
-    """
-    入力された配列（ネストされている場合もフラットな場合も対応）を
-    単一のフラットなリストに整形し、その後、LLMが読みやすい
-    マークダウン形式の単一の文字列に変換して出力する。
-    """
-    final_flat_list = []
-    
-    # --- STEP 1: 配列をフラットにする ---
-    if nested_array and isinstance(nested_array[0], list):
-        # 入力が「配列の配列」の場合
-        for sublist in nested_array:
-            for item in sublist:
-                if isinstance(item, dict):
-                    final_flat_list.append(item)
+    # --- STEP 2: マークダウン文字列に整形 ---
+    if not filtered_results:
+        final_string = "関連する検索結果は見つかりませんでした。"
     else:
-        # 入力がすでに「フラットな配列」の場合
-        for item in nested_array:
-            if isinstance(item, dict):
-                final_flat_list.append(item)
+        chunks = []
+        for i, result in enumerate(filtered_results, start=1):
+            title = result.get("title", "タイトルなし")
+            url = result.get("url", "URLなし")
+            content = result.get("content", "内容なし")
+            score = result.get("score", 0.0)
+            chunk = (
+                f"## 検索結果 {i}\n\n"
+                f"### タイトル: {title}\n"
+                f"**URL:** {url}\n"
+                f"**関連スコア:** {score:.4f}\n\n"
+                f"**内容:**\n{content}\n"
+            )
+            chunks.append(chunk)
+        final_string = "\n---\n\n".join(chunks)
 
-    # --- STEP 2: フラットなリストを単一の文字列に変換する ---
-    if not final_flat_list:
-        return {"final_search_results": "関連する検索結果は見つかりませんでした。"}
-
-    formatted_string_chunks = []
-    for i, result in enumerate(final_flat_list):
-        # .get()を使い、キーが存在しない場合でもエラーを防ぐ
-        title = result.get('title', 'タイトルなし')
-        url = result.get('url', 'URLなし')
-        content = result.get('content', '内容なし')
-        score = result.get('score', 0)
-
-        # 各検索結果をマークダウン形式のテキストブロックに整形
-        chunk = (
-            f"## 検索結果 {i+1}\n\n"
-            f"### タイトル: {title}\n"
-            f"**URL:** {url}\n"
-            f"**関連スコア:** {score:.4f}\n\n"
-            f"**内容:**\n{content}\n"
-        )
-        formatted_string_chunks.append(chunk)
-
-    # 全てのテキストブロックを区切り線で結合して、最終的な単一の文字列を作成
-    final_string = "\n---\n\n".join(formatted_string_chunks)
-    
+    # final_search_results を返却
     return {"final_search_results": final_string}
+
 ```
 
-4.  出力変数 `final_search_results` を `String` 型として設定します。
+#### スクリプト解説:
+    本スクリプトは、各クエリごとに「高スコアの検索結果のみ」を取り出し、その場でLLMが読みやすいマークダウン文字列へ変換して返します。
 
-### Step 8: 終了ノードで最終結果を確認する
+    入力想定（Tavily Searchの出力を想定。多少の揺れに対応）:
+      1) 標準形: [ { "results": [ { "title": ..., "url": ..., "content": ..., "score": ... }, ... ] } ]
+      2) フラット: [ { "title": ..., "url": ..., "content": ..., "score": ... }, ... ]
+      3) まれにネスト: [ [ { ... }, { ... } ], [ { ... } ] ]
+
+    処理手順:
+      - STEP 0: 入力正規化
+                入力の形状に依存せず、結果辞書の一次元リストに正規化します。
+      - STEP 1: スコアフィルタリング
+                score >= 0.5 の結果のみ残します（型が不定でも安全にfloat化）。
+      - STEP 2: マークダウン整形
+                フィルタ済み結果を、タイトル/URL/スコア/内容のブロックとして結合します。
+                該当がない場合は、その旨のメッセージを返します。
+
+    出力:
+      - final_search_results: str
+          → マークダウン整形済みの単一文字列のみを返します
+
+4.  コードノードの出力変数 `final_search_results` を `String` 型として設定します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-20.png)
+
+5.  イテレーションノードの `出力` に、このコードノードの出力 `{{コード実行/final_search_results}}` を設定します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-21.png)
+
+これで、複数の検索クエリで検索したスコアの高い結果だけが次のノードに渡せるようになりました。
+
+### Step 7: 終了ノードで最終結果を確認する
 
 整形された最終的な検索結果をワークフローの出力として設定します。
 
-1.  **Step 7のコードノード**の出力を `終了` ノードに接続します。
-2.  `終了` ノードでコードノードの出力 `{{#コード実行（配列の整形）.final_search_results#}}` を選択します。
+1.  **イテレーションノード**の出力を `終了` ノードに接続します。
+2.  `終了` ノードでイテレーションノードの出力 `{イテレーション/output}` を選択します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-22.png)
 
-### Step 9: テストと実行
+### Step 8: テストと実行
 
 実行画面で、パイプラインが正しく動作するか確認しましょう。
 
+まず、フォルダパス`PromptEngineering_lv02_ja\assets\chapter02`配下に配置された`リアルタイム翻訳スマホアプリ要件定義書.docx`ファイルをダウンロードしておきましょう。
+
 1.  画面右上の `実行` をクリックします。
-2.  `要件定義書` のフォームにテキストファイルをアップロードし、`実行` します。
-3.  最終的な出力として、AIが生成した**3つの問い**に基づき、Tavilyで並列検索・フィルタリングされ、**フラットな単一の配列に整形された質の高い情報**のリストがJSON形式で表示されれば成功です。
+2.  `要件定義書` のフォームに`配下に配置された`リアルタイム翻訳スマホアプリ要件定義書.docx`をアップロードし、`実行` します。
+3.  最終的な出力として、AIが生成した**検索クエリ**に基づき、Tavilyで並列検索・スコアフィルタリングされ、**整形された質の高い検索結果**のリストがJSON形式で表示されれば成功です。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work10-23.png)
 
-お疲れ様でした！ これで、外部ファイルから情報を読み込み、**ステップバック思考**で自律的に質の高いWeb調査を行い、**その結果を次の分析フェーズで利用しやすい形に整形する**、高度な自動化パイプラインが完成しました。
+お疲れ様でした！ これで、外部ファイルから情報を読み込み、**ステップバック思考**で自律的に質の高いWeb調査を行い、**その結果を次の分析フェーズで利用しやすい形に整形する**パイプラインが完成しました。
 
-次のWork3では、この整形された調査結果をさらに別のLLMに分析・要約させ、最終成果物である設計書を生成します。
+次のワークでは、この整形された調査結果をさらに別のLLMに分析・要約させ、最終成果物である設計書を生成します。
 
 
