@@ -19,9 +19,9 @@ duration: 30
 
 #### なぜRAGが注目されているのか
 
-ChatGPTのような一般的なLLMは、事前に学習した膨大なデータをもとに回答しますが、**学習データに含まれない情報（最新のニュースや、あなたの会社独自のルールなど）は知りません**。
+ChatGPTのような一般的なLLMは、事前に学習した膨大なデータをもとに回答しますが、**学習データに含まれない情報（ナレッジカットオフ以降の最新のニュースや、あなたの会社独自のルールなど）は知りません**。
 
-これまで、この制約に対処するために「プロンプトに参考情報をすべて貼り付ける」という方法がありましたが、これには以下のような問題がありました。
+この制約に対処するために「プロンプトに参考情報をすべて貼り付ける」という方法もありますが、これには以下のような問題がつきまといます。
 * 毎回ファイルをアップロードするのは手間がかかる。
 * プロンプトが長くなり、利用コストが増大する。
 * LLMが一度に処理できる文字数（トークン数）には上限がある。
@@ -45,7 +45,7 @@ RAGの裏側では、「埋め込みモデル」による文章の数値化や�
 
 ### 実践：育児休業規定に詳しいFAQボットを作る
 
-> **【今回のお悩み：管理部 塚本さん】**
+**【今回のお悩み：管理部 塚本さん】**
 >「育児休業の規定について、いろいろな社員から細かい質問を何度も受けていて、本来の業務が進まないんです…。『育児休業規定_サンプル.docx』というマニュアルはあるのですが、みんな読んでくれなくて。このPDFの内容を正確に参照して、私の代わりに質問に答えてくれるチャットボットが作れないでしょうか？」
 
 それでは、実際にDifyを使い、塚本さんの悩みを解決するRAGチャットボットを作成していきましょう。
@@ -55,17 +55,21 @@ RAGの裏側では、「埋め込みモデル」による文章の数値化や�
 まず、AIに参照させたい「育児休業規定_サンプル.docx」をDifyに「ナレッジ」として登録します。
 フォルダパス`PromptEngineering_lv02_ja\assets\chapter01`配下に配置された`育児休業規定_サンプル.docx`ファイルをダウンロードしておきましょう。
 
-1.  Difyのトップメニューから `[ナレッジ]` を選択します。
-2.  `[ナレッジベースを作成]` ボタンをクリックします。
-3.  `テキストファイルをアップロードの[参照]` を選択し、先ほどダウンロードした、AIに学習させたい文書ファイル（例：`育児休業規定_サンプル.docx`）をアップロードします。
-4.  `[次へ]` をクリックします。
+1.  Difyのトップメニューから `[ナレッジ]` を選択し、 `[ナレッジベースを作成]` ボタンをクリックします。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work3-1.png)
+2.  `テキストファイルをアップロードの[参照]` を選択し、先ほどダウンロードした、AIに学習させたい文書ファイル（例：`育児休業規定_サンプル.docx`）をアップロードします。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work3-2.png)
+
+3.  `[次へ]` をクリックします。
 
 #### Step 2: テキストの前処理設定
 
 次に、アップロードした文書をAIが検索しやすいように「前処理」します。まずはデフォルト設定のまま進めましょう。
 
 1.  **チャンク設定**: `汎用` が選択されていることを確認します。
-2.  **インデックス方法**: `高品質` を選択します。 これにより、文章の意味を理解して検索する「ベクトル検索」の準備が行われます。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work3-3.png)
+2.  **インデックス方法**: `高品質` を選択します。 これにより、文章の意味を理解して検索する「ベクトル検索」がデフォルトで選択されます。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work3-4.png)
 3.  `[保存して処理]` をクリックします。処理が完了し、ステータスが「利用可能」になるまで少し待ちます。
 
 これで、AIが文書を検索するための準備が整いました。
@@ -75,12 +79,15 @@ RAGの裏側では、「埋め込みモデル」による文章の数値化や�
 次に、RAGの処理フローをチャットフローで組み立てます。
 
 1.  `[スタジオ]` に戻り、`[最初から作成]` から `[チャットフロー]` を選択し、新しいアプリ（例: `育児休業規定ボット`）を作成します。
-3.  `開始` ノードと`LLM`ノードの間にカーソルを置いて `+` ボタンを押し、`[知識取得]` ノードを追加します。このノードがRAGの「検索」部分を担当します。
-4.  **知識取得ノードの設定**:
+2.  `開始` ノードと`LLM`ノードの間にカーソルを置いて `+` ボタンを押し、`[知識検索]` ノードを追加します。このノードがRAGの「検索」部分を担当します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work3-5.png)
+3.  **知識検索ノードの設定**:
     * `ナレッジ` の欄で、先ほど作成したナレッジ（`育児休業規定_サンプル.docx`）を選択します。
-
-5.  **LLMノードの設定**:
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work3-6.png)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work3-7.png)
+4.  **LLMノードの設定**:
     * `LLM` ノードの設定画面を開き、`コンテキスト` の設定欄をクリックし、`知識検索` ノードの出力である `result` を選択します。 これで、検索結果をLLMに渡す準備ができました。
+    ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work3-8.png)
     * **`メモリ` のトグルスイッチをONにします。** これにより、AIは過去の会話を記憶し、「それについてもっと詳しく」といった追跡質問にも対応できるようになります。
     * `システムプロンプト` に、以下のプロンプトを貼り付けます。
         ```
@@ -96,11 +103,17 @@ RAGの裏側では、「埋め込みモデル」による文章の数値化や�
         {/コンテキスト}
         ```
 	* `コンテキスト`のような変数をプロンプト内に設定する場合は`/`を入力することで選択できます。
+        ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work3-9.png)
     * `USER` の欄に、`sys.query` を設定します。これで、ユーザーの質問もLLMに渡されます。
+
+       ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work3-10.png)
 	* これで、検索結果をLLMに渡す準備ができました。
 
-7.  **回答ノードの設定**: `回答`ノードをクリックし、設定パネルを開きます。`入力`欄で、前の`LLM`ノードの出力変数（例: `{{#LLM.result#}}`）が設定されていることを確認します。
+5.  **回答ノードの設定**: `回答`ノードをクリックし、設定パネルを開きます。`入力`欄で、前の`LLM`ノードの出力変数（例: `{{#LLM.text#}}`）が設定されていることを確認します。 
+    ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work3-11.png)
+    * LLMノードの出力変数
 
+    ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work3-12.png)
 
 #### Step 4: 動作確認
 
@@ -110,7 +123,8 @@ RAGの裏側では、「埋め込みモデル」による文章の数値化や�
 2.  チャット入力欄に、PDFの内容に関する質問をしてみてください。
     * **あなた**: `育児休業は何歳まで取得できますか？`
     * **AIの応答（予想）**: （PDFの内容に基づき）`お子様が1歳に達するまで取得できます。`
-
+    
+    ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work3-13.png)
 ナレッジの内容に基づいてAIが回答できていれば成功です！
 
 ---

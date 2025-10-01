@@ -16,7 +16,7 @@ duration: 45
 #### 今回のお悩み：GrowthTech社 コールセンター
 株式会社GrowthTechのコールセンターは、主力製品である「**Microchaos**」と「**U.human**」に関する多くの問い合わせに対応しており、業務負荷の増大が課題となっています。
 
-「お客様からの電話やメールの半分以上が、製品マニュアルを読めば解決するような基本的な仕様や使い方に関する質問なんです。特に、『Microchaos』の操作方法と、開発者向けの『U.human API』に関する技術的な質問が混在しており、担当者が回答を探すのに時間がかかってしまっています。また、簡単な挨拶やお礼の言葉にまで、AIが律儀にマニュアル全体を検索してしまうと、無駄なコストがかかってしまうのも懸念点です。
+>「お客様からの電話やメールの半分以上が、製品マニュアルを読めば解決するような基本的な仕様や使い方に関する質問なんです。特に、『Microchaos』の操作方法と、開発者向けの『U.human API』に関する技術的な質問が混在しており、担当者が回答を探すのに時間がかかってしまっています。また、簡単な挨拶やお礼の言葉にまで、AIが律儀にマニュアル全体を検索してしまうと、無駄なコストがかかってしまうのも懸念点です。
 AIが質問された製品を自動で判断し、適切なマニュアルから回答を生成してくれる単一窓口のチャットボットがあれば、コールセンターの負荷を大幅に削減できるのですが…。」
 
 あなたのタスクは、AIコンサルタントとしてこの悩みを解決することです。この章で習得したDifyのチャットフロー開発スキルを駆使し、**複数の製品マニュアルを理解し、質問に応じて適切な情報を引き出しつつ、コスト効率も考慮した**高機能な顧客対応QAボットを開発してください。
@@ -46,10 +46,12 @@ AIが質問された製品を自動で判断し、適切なマニュアルから
 #### Step 1: 2つのナレッジを作成
 1.  Difyの `[ナレッジ]` メニューから、「6章実践課題」ナレッジを作成し、`Microchaos Manual.docx` をアップロードします。
 2.  同様に、「6章実践課題」ナレッジの中に`U.human API Manual.docx` もアップロードします。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work7-1.png)
 
 #### Step 2: チャットフローの全体設計
 1.  `[スタジオ]` で新しい `[チャットフロー]` を作成します。（例: 6章実践課題）
 2.  `開始` ノードの次に `[質問分類器]` ノードを配置し、ここから処理を**3つのルート**（Microchaos / U.human / その他）に分岐させる構成を考えます。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work7-2.png)
 
 #### Step 3: 質問分類器ノードのプロンプト設定
 1.  `入力変数` を `sys.query` に設定し、`メモリ` 機能をONにします。
@@ -85,11 +87,13 @@ AIが質問された製品を自動で判断し、適切なマニュアルから
 		- 「ありがとう、助かりました」
 		- 「素晴らしい製品ですね！」
     ```
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work7-3.png)
 
 #### Step 4: 各ルートの作成
 **1. 「Microchaosに関する質問」ルート**
-* `知識検索`ノードを追加し、ナレッジに**「Microchaosマニュアル」**を選択します。
-* `LLM`ノードを追加し、以下のプロンプトと設定を行います。
+* `知識検索`ノードを追加し、ナレッジに**「6章実践課題ナレッジ」**を選択します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work7-4.png)
+* `LLM`ノードを追加して`知識検索`ノードと接続し、以下のプロンプトと設定を行います。
     * **メモリ**: ON
     * **システムプロンプト例**:
         ```
@@ -103,9 +107,12 @@ AIが質問された製品を自動で判断し、適切なマニュアルから
         ### 文脈
         {/コンテキスト}
         ```
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work7-5.png)
 
 **2. 「U.human APIに関する質問」ルート**
-* `知識検索`ノードを追加し、ナレッジに**「U.human APIマニュアル」**を選択します。
+* `知識検索`ノードを追加し、ナレッジに**「6章実践課題ナレッジ」**を選択します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work7-6.png)
+
 * `LLM`ノードを追加し、より専門的なペルソナを設定します。
     * **メモリ**: ON
     * **システムプロンプト例**:
@@ -120,6 +127,7 @@ AIが質問された製品を自動で判断し、適切なマニュアルから
         ### 文脈
         {/コンテキスト}
         ```
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work7-7.png)
 
 **3. 「その他」ルート**
 * `知識検索`ノードは**配置せず**、直接`LLM`ノードを追加します。（コスト削減）
@@ -131,15 +139,19 @@ AIが質問された製品を自動で判断し、適切なマニュアルから
 		ユーザーの言葉に共感し、短く自然な返答をしてください。
 		回答に必要な情報がない場合は、素直に「わかりません」と答えてください。
         ```
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work7-8.png)
 
 #### Step 5: 出力の集約と安定化（変数集約器）
 1.  3つのルートの最後（各LLMの後）に `[変数集約器]` ノードを1つ配置します。
 2.  3つのLLMの出力を、すべてこの`変数集約器`に接続します。
 3.  `ソース変数`を3つ定義し、それぞれのLLMの出力を接続します。
 4.  `グループ化メソッド`を`結合`に設定します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work7-9.png)
 
 #### Step 6: 回答ノードへの接続と完成
 1.  `変数集約器`の出力を、最後の`回答`ノードに接続します。
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter01/img/work7-10.png)
+
 2.  プレビュー画面で以下の質問を投げかけ、AIが意図通りにルートを切り替え、かつ適切なペルソナで回答を生成することを確認できれば、実践課題の完了です。
 - 「モデルのダウンロード方法を教えて」⇒Microchaosのマニュアルを参照して回答
 - 「APIのベースURLは？」⇒Microchaosのマニュアルを参照して回答
