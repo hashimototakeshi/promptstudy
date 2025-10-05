@@ -12,7 +12,7 @@ relation: chapter03/index
 
 # エージェントノードの基本と2つのアプローチで作る対話型アシスタント
 
-## プロジェクトマネージャー田中さんのお悩み
+## 今回のお悩み：プロジェクトマネージャー 田中さん
 > Difyって、様々なノードを組み合わせることで欲しいアプリケーションをローコード/ノーコードで構築できるって聞いていたんですが、ユーザーの質問に柔軟に対応するには使うブロックやツールが増えますよね。そうなるとノード間で値の渡し方にも制約が増えてくるし、慣れていないと構築に時間が掛かるんですよ。構築やユーザー対応をもう少し柔軟にAIに任せるようなことはできないでしょうか？
 
 これまであなたはDifyのチャットフローやワークフローを一生懸命構築してきましたが、田中さんから上記のような意見をもらいました。AI自身が次に何をすべきかを判断し、目標に向かって自律的に行動してくれる、そんなノードがDifyには存在します。
@@ -57,7 +57,7 @@ relation: chapter03/index
 
 1.  Difyのトップページ上部にある `[プラグイン]` をクリックします。
 2.  検索窓に「`Dify Agent Strategies`」と入力し、表示されたプラグインの `[インストール]` ボタンをクリックします。
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work13-1.png)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work13-1.png)
 
 これで、エージェントノードが `Function Calling` や `ReAct` といった思考戦略を利用できるようになりました。
 
@@ -75,27 +75,27 @@ relation: chapter03/index
 1. スタジオから新しいチャットフローを作成します。
 
 2. 画面右上にあるボタンから会話変数の設定画面を開いて`+変数を追加`をクリックし `user_name` を追加します。種類は`String`、デフォルト値は空のままでOKです。
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work13-2.png)
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work13-3.png)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work13-2.png)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work13-3.png)
 
 ### Step 2: **チャットフローの構築**
 1. デフォルトで設置されている`LLM`ノードの右上にある3点マークをクリックし、`ノード変更`をクリック、`エージェント`を選択します。
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work13-4.png)
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work13-5.png)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work13-4.png)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work13-5.png)
 
 2. `エージェント`ノードをクリックし、エージェンティック戦略で「Agent」→「Function Calling」を選択します。
 
 ※本講座では、本テキストの執筆時点（2025年9月）で安定して動作する**Function Calling**を中心に使用します。
 
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work13-6.png)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work13-6.png)
 
 3. MODELは任意のモデルを選択します。
 
 4. 今回はユーザーから訊き出した要望をもとにWeb検索するため、TOOL LISTの横にある`+`をクリックして`Tavily Search`を選択します。
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work13-7.png)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work13-7.png)
 
 認証されたAPIキーを選択することも忘れずに行いましょう。
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work13-8.png)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work13-8.png)
 
 5. **Instructionプロンプト**に、達成すべき「ゴール」と「役割」を指示します。
 
@@ -117,7 +117,7 @@ relation: chapter03/index
 必要な情報が揃ったとあなたが判断した時点で、Web検索ツールを駆使して物件を探し、お客様に提案してください。会話の進め方や質問の順番は、すべてあなたに一任します。
 ```
 `/user_name`は会話変数で設定した変数を選択しましょう。
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work13-9.png)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work13-9.png)
 
 
 6. QUERYには、以下を設定します。ユーザーの入力内容を覚えてもらうため、メモリもオンにしておきます。
@@ -125,12 +125,12 @@ relation: chapter03/index
 #ユーザーの質問
 {開始/sys.query}
 ```
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work13-10.png)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work13-10.png)
 
 7. `開始`ノード、`エージェント`ノード、`回答`ノードを接続します。
 
 `回答`ノードの応答で受け取る変数は、`エージェント`ノードの出力変数である{エージェント/text}を設定します。
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work13-11.png)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work13-11.png)
 
 ### Step 3: **チャットフローの動作確認**
 
@@ -154,7 +154,7 @@ AIが対話を主導し、自然な流れでヒアリングから検索までを
     4. 最終的に出来上がった記事をDOCXファイルで出力
 ```
 もちろんエージェントノードを使わずにチャットフローで構築も可能ですが、以下画像のように利用するノードが増え、複数パターンの導線が必要になります。
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work13-12.png)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work13-12.png)
 
 この複雑なチャットフローも、エージェントノードを使うことで簡単に再現が可能です。ただし忠実に実行させるためには、AIに具体的な行動計画をステップバイステップで指示する **「逐次的アプローチ」** を用います。定められた手順に従ってユーザーと対話し、各ステップで承認を求めるようなチャットフローを構築していきましょう。
 
@@ -164,7 +164,7 @@ AIが対話を主導し、自然な流れでヒアリングから検索までを
 1. スタジオから新しいチャットフローを作成します。
 
 2. `開始`ノードをクリックし、入力フィールドにファイルアップロード用の変数を設定します。
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work13-13.png)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work13-13.png)
 
 3. デフォルトで設置されている`LLM`ノードの右上にある3点マークをクリックし、`ノード変更`をクリック、`エージェント`を選択します。
 
@@ -174,7 +174,8 @@ AIが対話を主導し、自然な流れでヒアリングから検索までを
 
 6. TOOL LISTの横にある`+`をクリックして`Tavily Search`と`DOC`を選択します。
 
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work13-14.png)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work13-14.png)
+
 Tavily Searchツールは認証されたAPIキーを選択することも忘れずに行いましょう。
 
 7. **Instructionプロンプト**に、達成すべき「ゴール」と「役割」を指示します。
@@ -194,7 +195,7 @@ Tavily Searchツールは認証されたAPIキーを選択することも忘れ�
 記事のメモファイルはそのまま`エージェント`ノードに渡せないため、テキスト抽出してから渡します。
 
 `テキスト抽出`ノードをクリックし、入力変数に`{開始/requirements_doc}`を設定します。
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work13-15.png)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work13-15.png)
 
 9. QUERYには、以下を設定します。ユーザーの入力内容を覚えてもらうため、メモリもオンにしておきます。
 ```
@@ -203,7 +204,7 @@ Tavily Searchツールは認証されたAPIキーを選択することも忘れ�
 #記事のメモ
 {テキスト抽出/text}
 ```
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work13-16.png)
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work13-16.png)
 
 10. `エージェント`ノードと`回答`ノードを接続します。
 
