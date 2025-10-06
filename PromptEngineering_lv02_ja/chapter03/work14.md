@@ -125,6 +125,7 @@ Difyの `[ツール]` -> `[Google Sheets]` を選択し、APIキー認証設定�
 ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work14-17.png)
 
 ダウンロードしたJSONファイルの中身（テキスト全文）をコピーし、Difyの認証情報欄に貼り付けて認証を行います。
+
 ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work14-18.png)
 ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work14-19.png)
 
@@ -299,6 +300,7 @@ Difyでは、これまでに作成したワークフローを、別のワーク�
 ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work14-23.png)
 
 2.  その下にある`「ワークフローをツールとして公開する」`ボタンを押して、ツールとしての設定を行います。
+
 ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work14-24.png)
 ```
 アイコンと名前: AIや自分が識別しやすいように設定します。
@@ -486,6 +488,7 @@ Google sheetsにデータを反映するために、ツールで指定されて�
 ### **トラブルシューティング：エージェントが期待通りに動作しない場合**
 
 それでも以下のように`JsonDecodeError`が発生する場合、ツールの指定した通りのjson形式でモデルがデータを出力できていないことを示唆しています。その際の基本的な対処法は2つあります。
+
 ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work14-34-error.png)
 
 1.  **モデルとパラメータ設定の見直し**:
@@ -496,7 +499,7 @@ Google sheetsにデータを反映するために、ツールで指定されて�
 
 たとえばGeminiモデルの場合、 **Gemini 2.5 Flash**（推論精度より速度とコスト効率を優先）から**Gemini 2.5 Pro**（速度やコスト効率より推論精度を優先）に変更することで出力が安定することがあります。
 
-また、モデルの各種パラメータ設定が出力を左右することを覚えておいてください。
+また、モデルの各種パラメータ設定も出力を左右します。たとえば出力ごとのブレをなるべく減らしたいのであればTemperatureを小さな数字に設定しましょう。
 ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter03/img/work14-35.png)
 ```
 Temperature：0〜2の間で設定します。temperature（温度）が高いほど、多様で予測しにくい出力が生成されます。逆にtemperatureが低いほど、より確定的で予測可能な出力になります。
@@ -507,13 +510,13 @@ Max Tokens：100〜128000の間で設定します。生成される回答の最�
 
 2. **エージェントノードに頼る処理を必要最低限に絞り、各処理ノードに分散する**
 
-エージェントノードの出力はモデルの推論性能に依存するため、今後アップデートされたモデルがリリースされることで解決していく可能性もあります。
 極力エラーを減らすために今すぐできる対策としては、エージェントノードに盛り込んでいたツールや指示（AIに任せるタスク）を極力絞り、個別にツールを配置して処理の安定化を図るのも一つの手です。
+エージェントノードの出力は結局のところモデルの性能に依存するため、今後アップデートされたモデルがリリースされることで解消していく可能性もあります。
 
 ---
 
 お疲れ様でした！ 
-これであなたは、複数の専門家（ツール）を協調させて一つの高度な目標を達成させる、というタスクをDifyのエージェントノード×プロンプトで実現することができました。
+これであなたは、複数の専門家（ツール）を協調させて複数のステップ目標を達成させるというタスクを、Difyのエージェントノード×プロンプトで実現することができました。
 
 次は、この講座における最後の実践課題です。生成AIプロンプトエンジニアリング講座で学んできたスキルを惜しみなく発揮し、GrowthTech代表取締役のお悩み解決に挑戦してみましょう。
 
