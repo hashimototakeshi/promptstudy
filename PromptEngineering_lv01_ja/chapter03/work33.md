@@ -1,8 +1,8 @@
 ---
 seq: 37
-title: 音楽も作れる
+title: 【コラム】プロンプトで音楽も作れる時代へ ― Suno AIが広げる生成AIの新たな可能性
 slug: chapter03/work33
-description: プロンプトで音楽も作れる時代となりました。
+description: プロンプトで作れるのは文章だけじゃありません。「Suno」という楽曲生成AIなら、「80年代の日本のシティポップ、眠らない都会」みたいなテキストから、ボーカル付きの楽曲が作れちゃいます。AIの創造性って本当にすごいんです。
 type: column
 relation: 
 difficulty: 4
