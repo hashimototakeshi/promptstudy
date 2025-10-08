@@ -96,7 +96,7 @@ relation: chapter02/work02,chapter02/work04
     * **ループ終了条件**はLLM（修正）ノードの出力内容を条件とするため、このあとノードを立ててから設定します。
 ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work11-5.png)
 
-:::POINT
+:::point
 ループ変数に`draft_document`を設定した理由は、`ループ`ノード内の出力を直接`DOC`ノードへ渡すことができない仕様のため、執筆した設計書をループ変数に持たせて`DOC`ノードで受け取る必要があるためです。
 :::
 
@@ -118,7 +118,7 @@ relation: chapter02/work02,chapter02/work04
 
 `ループ`ノードを使うと、「**指定した条件が満たされるまで**」パイプライン内の処理を繰り返すことができます。今回はこれを利用して「**執筆→レビュー→（改善点があれば）→修正**」という、人間が行うような品質向上のためのフィードバックループを自動化します。レビュアーLLMからの指摘がなくなるまで、設計書は何度も推敲されます。
 
-:::WARNING
+:::warning
 `ループ`ノードの設定画面では`最大ループ回数`を設定可能です。
 終了条件を満たすか、最大ループ回数に達した時点でループを抜け出します。
 以下の点を理解した上で、最適なループ回数を設定してください。
@@ -166,7 +166,7 @@ relation: chapter02/work02,chapter02/work04
     ```
 ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work11-6.png)
 
-:::POINT
+:::point
 ループ変数に`review_comments`を設定したのには2つ理由があります。
 ひとつはループを抜けるための条件として使用することです。
 ふたつ目は、`LLM（執筆）`ノードのUSER欄で、レビューコメントを渡すために使用するからです。`LLM（執筆）`ノードは`LLM（修正）`ノードより前の処理にあたるため、後続の`LLM（修正）`ノードの出力変数textを設定することができません。
