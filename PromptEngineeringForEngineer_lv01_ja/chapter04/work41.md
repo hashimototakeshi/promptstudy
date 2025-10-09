@@ -34,7 +34,7 @@ AIは、ログ全体からエラーのパターンを読み取り、それぞれ
 :::
 
 <details>
-<summary>練習問題1プロンプト例</summary>
+<summary>練習問題プロンプト例</summary>
 
 ```
 あなたは、システムの安定性を監視するSRE（Site Reliability Engineer）です。
@@ -55,9 +55,7 @@ ERROR: 2025-07-31 10:08:10 - java.sql.SQLException: Connection timed out
 3.  特に`java.sql.SQLException: Connection timed out`について、システムレベルで考えられる根本的な原因を3つ推測してください。
 ```
 
-### 練習問題1AI回答出力例
-
-（AIによる回答のイメージ）
+### AI回答出力例
 
 ```
 承知いたしました。ログを分析し、レポートします。
