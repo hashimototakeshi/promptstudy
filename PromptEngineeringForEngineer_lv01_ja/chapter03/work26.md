@@ -1,6 +1,6 @@
 ---
 seq: 30
-title: 段階的思考の誘導（Chain of Thought）
+title: 段階的思考の誘導
 slug: chapter03/work26
 description: AIの思考プロセスを段階的に誘導するChain of Thoughtプロンプティングを学ぶ
 type: work
@@ -11,9 +11,9 @@ duration: 25
 ---
 
 # 段階的思考の誘導（Chain of Thought）
+## サンプル課題
 
 :::sample-quiz
-## サンプル課題
 
 議事録をAIでまとめていた田中さんは、「AIアシスタント」のベータテスト中に重大なバグが発生したと報告を受け取りました。
 

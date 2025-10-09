@@ -184,7 +184,7 @@ relation: chapter02/work02,chapter02/work04
 # タスク
 以下の「要件定義書」と、それに基づいて作成された「設計書ドラフト」をレビューしてください。
 以下のチェックリストに基づき、具体的で建設的な改善点を最大3つ、箇条書きで指摘してください。
-**もし改善点が一切なければ、必ず「指摘事項なし」とだけ出力してください。** この応答がループを終了させるトリガーになります。
+**もし改善点が一切なければ、必ず「指摘事項なし」とだけ出力してください。**この応答がループを終了させるトリガーになります。
 
 # レビュー観点
 - 要件網羅性: 元の要件がすべて満たされているか？
@@ -234,7 +234,7 @@ relation: chapter02/work02,chapter02/work04
 ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work11-10.png)
 
 2.  **DOCノードの設定**:
-    * `Markdownコンテンツ` : `ループ` ノードの**出力** `{ループ/draft_document}` を設定します。
+    * `Markdownコンテンツ` : `ループ` ノードの**出力**`{ループ/draft_document}` を設定します。
     * `draft_document`: 任意のファイル名を入力します。
 ![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv02_ja/assets/chapter02/img/work11-11.png)
 

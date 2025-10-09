@@ -1,6 +1,6 @@
 ---
 seq: 10
-title: トークン数とは
+title: トークン数
 slug: chapter01/work08
 description: トークン数とは？カウント方法や失敗しないためのコツを解説
 type: column
