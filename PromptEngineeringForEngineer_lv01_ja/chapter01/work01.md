@@ -21,21 +21,21 @@ duration: 10
 
 ### **ChatGPT-5**: OpenAIのウェブサイト [chat.openai.com](https://chatgpt.com/)
 
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/img/ch1_w1_gpt1.png "")
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_gpt1.png "")
 
 サインアップまたはログインすると、プロンプト入力画面に遷移します。
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/img/ch1_w1_gpt2.png "")
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_gpt2.png "")
 
 ### **Gemini 2.5 Pro**: GoogleのGeminiウェブサイト [gemini.google.com](https://gemini.google.com/app?hl=ja)
 
 Googleアカウントでログインすることでプロンプト入力画面に遷移します。
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/img/ch1_w1_gemini.png "")
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_gemini.png "")
 
 ### **Claude Sonnet 4**: AnthropicのClaudeウェブサイト[claude.ai](https://claude.ai/new)
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/img/ch1_w1_claude1.png "")
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_claude1.png "")
 
 サインアップまたはログインすると、プロンプト入力画面に遷移します。
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/img/ch1_w1_claude2.png "")
+![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_claude2.png "")
 
 ## 3つのモデルの開発理念と特徴
 
