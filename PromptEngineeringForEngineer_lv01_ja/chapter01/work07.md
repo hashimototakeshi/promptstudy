@@ -1,9 +1,9 @@
 ---
 seq: 9
 title: バイアスの問題
-slug: chapter01/work03
+slug: chapter01/work07
 description: AIの得意・不得意を理解し、効果的な質問の仕方を学ぶ
-type: Practice
+type: practice
 relation: chapter01/work01
 difficulty: 1
 displayLanguage: ja
@@ -11,8 +11,8 @@ duration: 15
 ---
 # 偏見（バイアス）の問題
 
-## 発展問題
 :::practice
+## 📝 発展問題
 
 AIの学習方法には課題もあります。以下の質問をAIに投げかけて、その問題点を理解しましょう。
 
