@@ -1,6 +1,6 @@
 ---
 seq: 18
-title: 複雑な指示を安定させる、問題解決AIアシスタント
+title: 実践課題
 slug: chapter03/work14
 description: 複雑な指示を安定して実行するための3つのテクニックを学び、問題解決AIアシスタントを構築する
 type: work

@@ -1,6 +1,6 @@
 ---
 seq: 10
-title: トークン数
+title: AIコラム
 slug: chapter01/work08
 description: トークン数とは？カウント方法や失敗しないためのコツを解説
 type: column

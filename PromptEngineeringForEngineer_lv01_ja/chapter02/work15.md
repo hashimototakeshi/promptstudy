@@ -1,6 +1,6 @@
 ---
 seq: 18
-title: 出力形式をコントロールする
+title: サンプル問題
 slug: chapter02/work15
 description: AIの出力形式を制御し、目的に応じたフォーマットで出力させる方法を学ぶ
 type: work

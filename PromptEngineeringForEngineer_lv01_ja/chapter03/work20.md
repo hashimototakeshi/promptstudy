@@ -1,6 +1,6 @@
 ---
 seq: 24
-title: 多様な視点の獲得（ペルソナ）
+title: サンプル課題
 slug: chapter03/work20
 description: 異なる立場や視点から物事を捉えるためのペルソナ設定テクニックを学ぶ
 type: work

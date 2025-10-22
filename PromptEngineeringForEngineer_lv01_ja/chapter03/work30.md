@@ -1,6 +1,6 @@
 ---
 seq: 34
-title: 練習問題 プロモーション戦略
+title: 練習問題
 slug: chapter03/work30
 description: 反転インタラクションパターンを使って、プロモーション戦略の盲点を洗い出す
 type: exercise

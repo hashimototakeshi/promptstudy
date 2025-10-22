@@ -1,6 +1,6 @@
 ---
 seq: 7
-title: AIはなぜ賢く振る舞えるのか？
+title: サンプル課題
 slug: chapter01/work05
 description: AIの得意・不得意を理解し、効果的な質問の仕方を学ぶ
 type: work

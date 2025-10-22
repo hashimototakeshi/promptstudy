@@ -1,6 +1,6 @@
 ---
 seq: 29
-title: 練習問題 情報抽出
+title: 練習問題
 slug: chapter03/work25
 description: Few-Shotプロンプティングを使って、テキストから構造化データを抽出する
 type: exercise

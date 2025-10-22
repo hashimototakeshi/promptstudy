@@ -1,6 +1,6 @@
 ---
 seq: 44
-title: 設計書作成
+title: 練習問題
 slug: chapter04/work39
 description: AIを活用した効率的な設計書作成のテクニックを学ぶ
 type: exercise

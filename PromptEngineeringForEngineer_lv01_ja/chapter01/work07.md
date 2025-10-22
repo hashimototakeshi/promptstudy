@@ -1,6 +1,6 @@
 ---
 seq: 9
-title: バイアスの問題
+title: 発展問題
 slug: chapter01/work07
 description: AIの得意・不得意を理解し、効果的な質問の仕方を学ぶ
 type: practice

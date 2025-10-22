@@ -1,6 +1,6 @@
 ---
 seq: 26
-title: 練習問題 リスク分析
+title: 練習問題
 slug: chapter03/work22
 description: ペルソナを活用して、プロジェクトの潜在的なリスクを分析する
 type: exercise

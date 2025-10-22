@@ -1,6 +1,6 @@
 ---
 seq: 4
-title: 初めてのチャットボット作成と基本操作
+title: 実践課題
 slug: chapter01/work02
 description: Difyを使用してシンプルなチャットボットを作成し、AIに役割を与える方法を学ぶ
 type: work

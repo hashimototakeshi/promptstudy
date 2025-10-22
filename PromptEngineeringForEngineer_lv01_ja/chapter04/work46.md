@@ -1,9 +1,9 @@
 ---
 seq: 50
-title: 【コラム】AIですぐにデモアプリを開発できる - ノーコードツールの進化
+title: AIコラム
 slug: chapter04/work46
 description: 日本語で「こんなアプリを作って」と言うだけで、簡単なアプリの雛形を作ってくれるAIツールをご紹介します。
-type: exercise
+type: column
 relation: chapter04/work33
 difficulty: 3
 displayLanguage: ja

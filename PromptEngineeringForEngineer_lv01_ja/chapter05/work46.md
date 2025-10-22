@@ -1,6 +1,6 @@
 ---
 seq: 52
-title: 思考の深化（ステップバック）
+title: サンプル課題
 slug: chapter05/work46
 description: 問題の本質を見極め、より深い分析と解決策を導くためのステップバックテクニックを学ぶ
 type: work

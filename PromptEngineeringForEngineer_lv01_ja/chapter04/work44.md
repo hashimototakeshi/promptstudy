@@ -1,6 +1,6 @@
 ---
 seq: 49
-title: エラーの原因特定と対策提案
+title: 実践課題
 slug: chapter04/work44
 description: これまでに学んだ技術調査、設計書作成、ログ解析のスキルを総動員した実践的な課題に取り組む
 type: practice

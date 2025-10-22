@@ -1,6 +1,6 @@
 ---
 seq: 60
-title: タスク完了の定義を具体化する
+title: 練習問題
 slug: chapter05/work54
 description: 曖昧なタスク完了の定義を具体的で測定可能なものに改善する自己検証テクニックを学ぶ
 type: exercise

@@ -1,6 +1,6 @@
 ---
 seq: 27
-title: 具体例からの学習
+title: サンプル課題
 slug: chapter03/work23
 description: 具体例を示すことでAIの出力を制御するFew-Shotプロンプティングを学ぶ
 type: work

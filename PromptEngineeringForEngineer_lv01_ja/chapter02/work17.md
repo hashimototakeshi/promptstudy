@@ -1,6 +1,6 @@
 ---
 seq: 20
-title: JSON形式での出力練習
+title: 練習問題
 slug: chapter02/work17
 description: JSON形式での出力指定を学ぶ練習問題
 type: exercise

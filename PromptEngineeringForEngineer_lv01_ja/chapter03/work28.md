@@ -1,6 +1,6 @@
 ---
 seq: 32
-title: 練習問題 採用選考
+title: 練習問題
 slug: chapter03/work28
 description: Chain of Thoughtプロンプティングを使って、採用選考を論理的に行う
 type: exercise

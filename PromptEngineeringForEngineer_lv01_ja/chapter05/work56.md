@@ -1,6 +1,6 @@
 ---
 seq: 62
-title: 【実践課題】`メタ認知`で自らの出力をレビューさせる
+title:  実践課題
 slug: chapter05/work56
 description: これまでに学んだステップバック、メタ認知、自己検証のスキルを総動員した実践的な課題に取り組む
 type: practice

@@ -1,6 +1,6 @@
 ---
 seq: 7
-title: あなたの業務にもRAGを！具体的な活用シーン2選
+title: AIコラム
 slug: chapter01/column02
 description: RAG技術を活用した実践的な業務効率化のアイデアを紹介
 type: column

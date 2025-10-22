@@ -1,6 +1,6 @@
 ---
 seq: 47
-title: ログ解析・デバッグ支援
+title: 練習問題
 slug: chapter04/work42
 description: AIを活用した効率的なログ解析とデバッグのテクニックを学ぶ
 type: work

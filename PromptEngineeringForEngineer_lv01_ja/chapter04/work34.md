@@ -1,6 +1,6 @@
 ---
 seq: 39
-title: 技術調査・選定（ファクトチェック）
+title: サンプル課題
 slug: chapter04/work34
 description: AIを活用した技術調査とファクトチェックの実践的な手法を学ぶ
 type: work

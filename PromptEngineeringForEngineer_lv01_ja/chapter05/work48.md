@@ -1,6 +1,6 @@
 ---
 seq: 54
-title: 思考の深化
+title: 練習問題
 slug: chapter05/work48
 description: 
 type: exercise

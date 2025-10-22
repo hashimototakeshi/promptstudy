@@ -1,6 +1,6 @@
 ---
 seq: 10
-title: AIの脆弱性「プロンプトインジェクション」とその対策
+title: AIコラム
 slug: chapter01/work08
 description: AIアプリケーションのセキュリティリスクとその対策について学ぶ
 type: column

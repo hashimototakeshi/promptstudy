@@ -1,6 +1,6 @@
 ---
 seq: 3
-title: Difyをローカル環境に構築しよう
+title: 実践課題
 slug: chapter01/work01
 description: Difyのローカル環境構築を通じて、AIアプリケーションプラットフォームの基本を理解する
 type: work

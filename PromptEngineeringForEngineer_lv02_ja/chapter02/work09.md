@@ -1,6 +1,6 @@
 ---
 seq: 12
-title: ワークフローの仕組みと基本操作
+title: サンプル課題
 slug: chapter02/work09
 description: ワークフローの基本的な仕組みを理解し、API設計書の雛形ジェネレーターを作成する
 type: work

@@ -1,6 +1,6 @@
 ---
 seq: 14
-title: 背景説明の練習問題
+title: 練習問題
 slug: chapter02/work11
 description: 背景説明を活用した効果的なプロンプトの作成方法を学ぶ
 type: exercise

@@ -1,6 +1,6 @@
 ---
 seq: 5
-title: RAG（検索拡張生成）でAIを賢くしよう
+title: 実践課題
 slug: chapter01/work03
 description: RAG技術を活用して、社内文書を参照できるAIチャットボットを構築する
 type: work

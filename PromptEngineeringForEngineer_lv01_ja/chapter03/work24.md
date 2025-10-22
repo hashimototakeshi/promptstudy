@@ -1,6 +1,6 @@
 ---
 seq: 28
-title: 練習問題 感情分析
+title: 練習問題
 slug: chapter03/work24
 description: Few-Shotプロンプティングを使って、フィードバックの感情分析を行う
 type: exercise

@@ -1,6 +1,6 @@
 ---
 seq: 12
-title: AIへの上手な頼み方 - 役割設定、背景説明、条件指定のコツ
+title: サンプル課題
 slug: chapter02/work09
 description: AIに効果的な指示を出すための基本的なテクニックを学ぶ
 type: work

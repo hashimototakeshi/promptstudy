@@ -1,6 +1,6 @@
 ---
 seq: 35
-title: 練習問題 プロジェクト成功のための質問
+title: 練習問題
 slug: chapter03/work31
 description: 反転インタラクションパターンを使って、プロジェクト成功のための重要な論点を洗い出す
 type: exercise

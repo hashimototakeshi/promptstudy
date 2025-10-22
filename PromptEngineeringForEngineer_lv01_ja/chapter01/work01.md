@@ -1,6 +1,6 @@
 ---
 seq: 3
-title: まずは触ってみよう
+title: サンプル課題
 slug: chapter01/work01
 description: 生成AIの基本的な仕組みと特性を理解し、日常業務での活用イメージを持つ
 type: work

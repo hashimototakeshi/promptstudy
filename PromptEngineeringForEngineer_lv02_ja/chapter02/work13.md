@@ -1,6 +1,6 @@
 ---
 seq: 15
-title: 【コラム】動画で学ぶAIを活用したリバースエンジニアリング
+title: AIコラム
 slug: chapter02/work13
 description: ドキュメントが不足しているシステム開発現場でリバースエンジニアリングがどのように役立つか、また、AIツール（ChatGPT、GitHub Copilot、Jiteraなど）を活用して設計書やテスト仕様書を効率的に作成する試みを紹介。
 type: practice

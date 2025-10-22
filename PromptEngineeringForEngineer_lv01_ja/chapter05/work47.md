@@ -1,6 +1,6 @@
 ---
 seq: 53
-title: 問題の本質を見抜く
+title: 練習問題
 slug: chapter05/work47
 description: 問題の本質を見極めるためのテクニック
 type: exercise

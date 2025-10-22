@@ -1,6 +1,6 @@
 ---
 seq: 5
-title: なぜ「質問力」が重要なのか？
+title: サンプル問題
 slug: chapter01/work02
 description: AIの得意・不得意を理解し、効果的な質問の仕方を学ぶ
 type: work

@@ -1,6 +1,6 @@
 ---
 seq: 15
-title: 曖昧な指示では意図が伝わりにくい - 具体的に、詳しく伝える方法
+title: サンプル課題
 slug: chapter02/work12
 description: 曖昧な指示を避け、具体的で詳細な指示を出す方法を学ぶ
 type: work

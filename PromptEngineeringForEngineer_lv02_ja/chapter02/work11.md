@@ -1,6 +1,6 @@
 ---
 seq: 14
-title: 設計書の自動生成とWord(DOCX)ドキュメントへの保存
+title: 実践課題
 slug: chapter02/work11
 description: LLMチェーンとループを活用し、設計書の自動生成からWordドキュメントへの保存までを一気通貫で実現する
 type: work

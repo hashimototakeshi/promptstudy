@@ -1,6 +1,6 @@
 ---
 seq: 22
-title: 動画で学ぶAI企業入門
+title: AIコラム
 slug: chapter02/work19
 description: AIの仕組みを深く理解する
 type: column

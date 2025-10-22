@@ -1,6 +1,6 @@
 ---
 seq: 48
-title: AIと共に進める新機能開発
+title: 実践課題
 slug: chapter04/work43
 description: これまでに学んだ技術調査、設計書作成、ログ解析のスキルを総動員した実践的な課題に取り組む
 type: practice

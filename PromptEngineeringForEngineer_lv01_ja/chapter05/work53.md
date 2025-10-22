@@ -1,6 +1,6 @@
 ---
 seq: 59
-title: 懸念をAI自身に検証させる
+title: 練習問題
 slug: chapter05/work53
 description: 技術的なリスクに対する懸念をAI自身に検証させる自己検証プロンプト
 type: exercise

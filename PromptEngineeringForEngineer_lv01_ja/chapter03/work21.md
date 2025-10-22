@@ -1,6 +1,6 @@
 ---
 seq: 25
-title: 練習問題 セールストーク作成
+title: 練習問題
 slug: chapter03/work21
 description: 特定のペルソナを設定して、効果的なセールストークを作成する
 type: exercise

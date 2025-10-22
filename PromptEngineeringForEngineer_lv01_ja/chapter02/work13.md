@@ -1,6 +1,6 @@
 ---
 seq: 16
-title: 具体的な指示の練習問題
+title: 練習問題
 slug: chapter02/work13
 description: 具体的な指示を出すための練習問題に取り組む
 type: exercise

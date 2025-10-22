@@ -1,6 +1,6 @@
 ---
 seq: 30
-title: 段階的思考の誘導
+title: サンプル課題
 slug: chapter03/work26
 description: AIの思考プロセスを段階的に誘導するChain of Thoughtプロンプティングを学ぶ
 type: work

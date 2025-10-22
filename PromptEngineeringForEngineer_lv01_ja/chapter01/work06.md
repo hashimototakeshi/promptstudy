@@ -1,6 +1,6 @@
 ---
 seq: 8
-title: 効果的な質問
+title: 練習問題
 slug: chapter01/work06
 description: AIの得意・不得意を理解し、効果的な質問の仕方を学ぶ
 type: exercise

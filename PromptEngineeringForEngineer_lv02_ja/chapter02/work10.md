@@ -1,6 +1,6 @@
 ---
 seq: 13
-title: ツールの連携による自動化の拡張
+title: 実践課題
 slug: chapter02/work10
 description: Difyのツール連携機能を活用し、要件定義書を元にした調査と設計書作成の自動化パイプラインを構築する
 type: work

@@ -1,6 +1,6 @@
 ---
 seq: 64
-title: 【コラム】AIを活用した次世代コードエディタ「Cursor（カーソル）」
+title: AIコラム
 slug: chapter05/work58
 description: あなたの開発スピードをもう一段階引き上げませんか？Cursorは、コーディングの知識がある方にこそおすすめな、開発効率を向上させるための強力なツールです。
 type: column

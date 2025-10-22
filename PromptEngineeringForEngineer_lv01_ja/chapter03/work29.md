@@ -1,6 +1,6 @@
 ---
 seq: 33
-title: 対話を通じた思考の精緻化
+title: サンプル課題
 slug: chapter03/work29
 description: ユーザーが質問を受ける側に回ることで思考を深める反転インタラクションを学ぶ
 type: work

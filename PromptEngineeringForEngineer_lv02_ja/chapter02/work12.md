@@ -1,6 +1,6 @@
 ---
 seq: 15
-title: 自己改善ループを搭載したSEO記事自動生成ワークフロー
+title: 実践課題
 slug: chapter02/work12
 description: 実践的な課題を通じて、自己改善ループを搭載したSEO記事自動生成ワークフローを構築する
 type: practice

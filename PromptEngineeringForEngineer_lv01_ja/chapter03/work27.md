@@ -1,6 +1,6 @@
 ---
 seq: 31
-title: ROI計算
+title: 練習問題
 slug: chapter03/work27
 description: Chain of Thoughtプロンプティングを使って、キャンペーンのROIを計算する
 type: exercise

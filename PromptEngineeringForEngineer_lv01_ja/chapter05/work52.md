@@ -1,6 +1,6 @@
 ---
 seq: 58
-title: 妥当性の向上（自己検証）
+title: サンプル課題
 slug: chapter05/work52
 description: AIに自己検証を行わせ、提案書の整合性と説得力を高めるテクニックを学ぶ
 type: work

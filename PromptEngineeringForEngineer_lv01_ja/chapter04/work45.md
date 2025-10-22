@@ -1,10 +1,10 @@
 ---
 seq: 50
-title: エラーの原因特定と対策提案
+title: 実践課題
 slug: chapter04/work45
 description: これまでに学んだ技術調査、設計書作成、ログ解析のスキルを総動員した実践的な課題に取り組む
 type: practice
-relation: chapter04_for_Engineers/index,chapter04_for_Engineers/work3
+relation: chapter04/index,chapter04/work40,chapter04/work41,chapter04/work42
 difficulty: 3
 displayLanguage: ja
 duration: 15

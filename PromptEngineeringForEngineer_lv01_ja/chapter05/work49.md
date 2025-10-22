@@ -1,6 +1,6 @@
 ---
 seq: 55
-title: 品質の改善（メタ認知）
+title: サンプル課題
 slug: chapter05/work49
 description: AIに俯瞰する視点を与え、より高品質なアウトプットを引き出すメタ認知テクニックを学ぶ
 type: work

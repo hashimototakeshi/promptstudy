@@ -1,6 +1,6 @@
 ---
 seq: 6
-title: 【小コラム】RAGの心臓部を探る：AIはどのようにして"賢く"検索しているのか？
+title: AIコラム
 slug: chapter01/column01
 description: RAG技術の核心であるチャンク化と検索アルゴリズムの仕組みを解説
 type: column

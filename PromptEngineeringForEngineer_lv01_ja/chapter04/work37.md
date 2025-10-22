@@ -1,6 +1,6 @@
 ---
 seq: 42
-title: 設計書作成
+title: サンプル課題
 slug: chapter04/work37
 description: AIを活用した効率的な設計書作成のテクニックを学ぶ
 type: work
