@@ -12,6 +12,7 @@ duration: 10
 
 # まずは触ってみよう - ChatGPT、Gemini、Claudeを実際に使い比べ
 
+
 **学習目標**: 生成AIの基本的な仕組みと特性を理解し、日常業務での活用イメージを持つ
 
 ## はじめに：3つの生成AIを体験してみよう
@@ -21,21 +22,23 @@ duration: 10
 
 ### **ChatGPT-5**: OpenAIのウェブサイト [chat.openai.com](https://chatgpt.com/)
 
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_gpt1.png "")
+![w=60% center](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_gpt1.png)
 
 サインアップまたはログインすると、プロンプト入力画面に遷移します。
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_gpt2.png "")
+:::center
+![w=60% center](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_gpt2.png "")
+:::
 
 ### **Gemini 2.5 Pro**: GoogleのGeminiウェブサイト [gemini.google.com](https://gemini.google.com/app?hl=ja)
 
 Googleアカウントでログインすることでプロンプト入力画面に遷移します。
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_gemini.png "")
+![w=60% center](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_gemini.png "")
 
 ### **Claude Sonnet 4**: AnthropicのClaudeウェブサイト[claude.ai](https://claude.ai/new)
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_claude1.png "")
+![center w=60%](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_claude1.png "")
 
 サインアップまたはログインすると、プロンプト入力画面に遷移します。
-![](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_claude2.png "")
+![w=60% center](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_claude2.png "")
 
 ## 3つのモデルの開発理念と特徴
 
