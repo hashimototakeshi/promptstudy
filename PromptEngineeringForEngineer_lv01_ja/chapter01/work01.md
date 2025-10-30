@@ -22,12 +22,10 @@ duration: 10
 
 ### **ChatGPT-5**: OpenAIのウェブサイト [chat.openai.com](https://chatgpt.com/)
 
-![w=60% center](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_gpt1.png)
+![w=60% cneter](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_gpt1.png)
 
 サインアップまたはログインすると、プロンプト入力画面に遷移します。
-:::center
-![w=60% center](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_gpt2.png "")
-:::
+![w=60% center こんにちは](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_gpt2.png "")
 
 ### **Gemini 2.5 Pro**: GoogleのGeminiウェブサイト [gemini.google.com](https://gemini.google.com/app?hl=ja)
 
