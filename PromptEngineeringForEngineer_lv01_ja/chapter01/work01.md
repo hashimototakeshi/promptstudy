@@ -22,7 +22,7 @@ duration: 10
 
 ### **ChatGPT-5**: OpenAIのウェブサイト [chat.openai.com](https://chatgpt.com/)
 
-![w=60% cneter](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_gpt1.png)
+![w=60% center](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_gpt1.png)
 
 サインアップまたはログインすると、プロンプト入力画面に遷移します。
 ![w=60% center こんにちは](https://chataniakinori-no1s.github.io/prompt_engineering/PromptEngineering_lv01_ja/assets/chapter01/ch1_w1_gpt2.png "")
